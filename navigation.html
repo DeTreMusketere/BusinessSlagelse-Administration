@@ -6,13 +6,19 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li ng-class="{ active: pageCtrl.isSet(1)}">
 				<a href ng-click="pageCtrl.setPage(1)">Forside</a></li>
-			<li ng-class="{ active: pageCtrl.isSet(2)}">
-				<a href ng-click="pageCtrl.setPage(2)">Tilbud</a></li>
-			<li ng-class="{ active: pageCtrl.isSet(3)}">
-				<a href ng-click="pageCtrl.setPage(3)">Min butik</a></li>
-			<li ng-class="{ active: pageCtrl.isSet(4)}">
-				<a href ng-click="pageCtrl.setPage(4)">Hjælp</a></li>
-		</ul>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tilbud <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href ng-click="pageCtrl.setPage(2)">Oversigt</a></li>
+						<li class="divider"></li>
+						<li><a href ng-click="pageCtrl.setPage(5)">Opret tilbud</a></li>
+					</ul>
+				</li>
+				<li ng-class="{ active: pageCtrl.isSet(3)}">
+					<a href ng-click="pageCtrl.setPage(3)">Min butik</a></li>
+					<li ng-class="{ active: pageCtrl.isSet(4)}">
+						<a href ng-click="pageCtrl.setPage(4)">Hjælp</a></li>
+					</ul>
 
-	</div>
-</div>
+				</div>
+			</div>
