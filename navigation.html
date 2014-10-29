@@ -1,0 +1,18 @@
+<div class="navbar navbar-default navbar-static-top">
+	<div class="container">
+
+		<a href ng-click="pageCtrl.setPage(1)" class="navbar-brand">Administration</a>
+
+		<ul class="nav navbar-nav navbar-right">
+			<li ng-class="{ active: pageCtrl.isSet(1)}">
+				<a href ng-click="pageCtrl.setPage(1)">Forside</a></li>
+			<li ng-class="{ active: pageCtrl.isSet(2)}">
+				<a href ng-click="pageCtrl.setPage(2)">Tilbud</a></li>
+			<li ng-class="{ active: pageCtrl.isSet(3)}">
+				<a href ng-click="pageCtrl.setPage(3)">Min butik</a></li>
+			<li ng-class="{ active: pageCtrl.isSet(4)}">
+				<a href ng-click="pageCtrl.setPage(4)">Hjælp</a></li>
+		</ul>
+
+	</div>
+</div>
