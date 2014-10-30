@@ -1,4 +1,4 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngAnimate']);
 
 app.controller('PageController', function() {
 	this.page = 1;

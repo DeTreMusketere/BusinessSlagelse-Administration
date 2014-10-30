@@ -1,47 +1,47 @@
-<div class="panel panel-default">
+<div class="container panel panel-default">
 	<div class="panel-body">
 		<div>
-			<button href ng-click="pageCtrl.setPage(5)" class="btn btn-default btn-sm">Opret tilbud</button>
-			<button href="" class="btn btn-default btn-sm">Slet udløbne tilbud</button>
+			<a href ng-click="pageCtrl.setPage(5)" class="btn btn-default btn-sm jelltrans">Opret tilbud</a>
+			<a href class="btn btn-default btn-sm jelltrans">Slet udløbne tilbud</a>
 		</div>
-		<br>
-		<center>
-			<div>
-
-				<table class="table table-striped table-hover ">
-					<thead>
-						<tr>
-							<th>Titel</th>
-							<th>Start</th>
-							<th>Slut</th>
-							<th>Publish</th>
-							<th>Pris</th>
-							<th>Status</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th>Bananer</th>
-							<th>21/10/2014 - 14:00</th>
-							<th>25/10/2014 - 00:00</th>
-							<th>21/10/2014 - 12:00</th>
-							<th>200 kr</th>
-							<th style="color: lightgreen;">Aktiv</th>
-							<th>
-								<button href="" class="btn btn-success btn-xs">Eksempel</button>
-								<div class="btn-group">
-		  							<a href="#" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown">Mere <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-									    <li><a href>Rediger</a></li>
-									    <li><a href>Slet</a></li>
-								  </ul>
-								</div>
-							</th>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</center>
 	</div>
+	<br>
+	<center>
+		<div>
+
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Titel</th>
+						<th>Start</th>
+						<th>Slut</th>
+						<th>Publish</th>
+						<th>Pris</th>
+						<th>Status</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Banan</th>
+						<th>21/10/2014 - 14:00</th>
+						<th>25/10/2014 - 00:00</th>
+						<th>21/10/2014 - 12:00</th>
+						<th>200 kr</th>
+						<th><span class="label label-success">Published</span></th>
+						<th>
+							<a href class="btn btn-info btn-xs">Eksempel</a>
+							<div class="btn-group">
+	  							<a href="#" class="btn btn-info btn-xs dropdown-toggle" data-toggle="dropdown">Mere <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+								    <li><a href>Rediger</a></li>
+								    <li><a href>Slet</a></li>
+							  </ul>
+							</div>
+						</th>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</center>
 </div>
