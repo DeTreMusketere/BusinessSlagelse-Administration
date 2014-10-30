@@ -1,0 +1,9 @@
+.question{
+	font-weight:bold;
+	font-size:1.2em;
+	text-indent: 20pt;
+}
+.answer{
+	text-indent: 20pt;
+	padding-bottom: 1em;
+}
