@@ -1,19 +1,26 @@
 <div class="container">
+
+	<!-- Generelt -->
     <div class="content-animation" ng-show="pageCtrl.isSet(1)" ng-include="'page/forside.html'">
 	</div>
+
+	<div class="content-animation" ng-show="pageCtrl.isSet(2)" ng-include="'page/hjelp.html'">
+	</div>
 	
-	<div class="content-animation" ng-show="pageCtrl.isSet(2)" ng-include="'page/tilbudoversigt.html'">
+	<!-- Tilbud -->
+	<div class="content-animation" ng-show="pageCtrl.isSet(20)" ng-include="'page/tilbudoversigt.html'">
 	</div>
 
-	<div class="content-animation" ng-show="pageCtrl.isSet(3)" ng-include="'page/minbutik.html'">
+	<div class="content-animation" ng-show="pageCtrl.isSet(21)" ng-include="'page/oprettilbud.html'">
 	</div>
 
-	<div class="content-animation" ng-show="pageCtrl.isSet(4)" ng-include="'page/hjelp.html'">
+	<div class="content-animation" ng-show="pageCtrl.isSet(23)" ng-include="'page/slettilbud.html'">
 	</div>
 
-	<div class="content-animation" ng-show="pageCtrl.isSet(5)" ng-include="'page/oprettilbud.html'">
+	<!-- Butik -->
+	<div class="content-animation" ng-show="pageCtrl.isSet(44)" ng-include="'page/minbutik.html'">
 	</div>
 
-	<div class="content-animation" ng-show="pageCtrl.isSet(6)" ng-include="'page/slettilbud.html'">
-	</div>
+	<!-- Tags -->
+
 </div>
