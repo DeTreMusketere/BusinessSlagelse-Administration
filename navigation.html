@@ -4,8 +4,10 @@
 		<a href ng-click="pageCtrl.setPage(1)" class="navbar-brand">Business Slagelse Administration</a>
 
 		<ul class="nav navbar-nav navbar-right">
+
 			<li ng-class="{ active: pageCtrl.isSet(1)}">
 				<a href ng-click="pageCtrl.setPage(1)">Forside</a></li>
+
 			<li ng-class="{ active: pageCtrl.isSet(2) || pageCtrl.isSet(5)}" class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tilbud <b class="caret"></b></a>
 				<ul class="dropdown-menu">
@@ -14,12 +16,34 @@
 					<li ng-class="{ active: pageCtrl.isSet(5)}"><a href ng-click="pageCtrl.setPage(5)">Opret tilbud</a></li>
 				</ul>
 			</li>
+
+			<li ng-class="{ active: pageCtrl.isSet(2) || pageCtrl.isSet(5)}" class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Butikker <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li ng-class="{ active: pageCtrl.isSet(2)}"><a href ng-click="pageCtrl.setPage(2)">Oversigt</a></li>
+					<li class="divider"></li>
+					<li ng-class="{ active: pageCtrl.isSet(5)}"><a href ng-click="pageCtrl.setPage(5)">Opret butik</a></li>
+				</ul>
+			</li>
+
+			<li ng-class="{ active: pageCtrl.isSet(2) || pageCtrl.isSet(5)}" class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Tags <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li ng-class="{ active: pageCtrl.isSet(2)}"><a href ng-click="pageCtrl.setPage(2)">Oversigt</a></li>
+					<li class="divider"></li>
+					<li ng-class="{ active: pageCtrl.isSet(5)}"><a href ng-click="pageCtrl.setPage(5)">Opret tag</a></li>
+				</ul>
+			</li>
+
 			<li ng-class="{ active: pageCtrl.isSet(3)}">
 				<a href ng-click="pageCtrl.setPage(3)">Min butik</a></li>
+
 			<li ng-class="{ active: pageCtrl.isSet(4)}">
 				<a href ng-click="pageCtrl.setPage(4)">Hjælp</a></li>
+
 			<li>
 				<a href ><span class="glyphicon glyphicon-log-out"></span></a></li>
+
 		</ul>
 
 	</div>
