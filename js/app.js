@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngAnimate']);
+var app = angular.module('app', ['ngAnimate', 'oitozero.ngSweetAlert']);
 
 app.controller('PageController', function() {
 	this.page = 1;
@@ -8,6 +8,22 @@ app.controller('PageController', function() {
 	this.isSet = function(page) {
 		return this.page === page;
 	};
+});
+
+app.controller('AlertController', function(SweetAlert) {
+    this.deleteWarning = function(title, message) {
+        SweetAlert.swal({
+            title: title,
+            text: message,
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Slet"
+        },
+        function(){ 
+            SweetAlert.success("DONE!");
+        });
+    };
 });
 
 app.directive("siteNavigation", function() {

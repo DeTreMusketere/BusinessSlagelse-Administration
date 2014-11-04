@@ -4,23 +4,25 @@
 		<title>Bootstrap with Angular example</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<!-- Import AngularJS -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 		<!-- Import AngularJS Animate -->
 		<script type="text/javascript" src="js/angular-animate.min.js"></script>
-		<!-- Import AngularJS application -->
-		<script src="js/app.js"></script>
 		<!-- Import bootstrap stylesheet -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<!-- Import bootstrap theme -->
 		<link href="css/theme.css" rel="stylesheet">
 		<!-- Import jquery -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<!-- Import bootstrap script -->
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<!-- Import SweetAlert script -->
-		<script src="js/sweet-alert.min.js"></script>
+		<script type="text/javascript" src="js/sweet-alert.min.js"></script>
 		<!-- Import SweetAlert stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/sweet-alert.css">
+		<!-- Import ngSweetAlert script -->
+		<script type="text/javascript" src="js/ngSweetAlert.js"></script>
+		<!-- Import AngularJS application -->
+		<script type="text/javascript" src="js/app.js"></script>
 		<!-- Import custom styles -->
 		<link href="css/hjelp.css" rel="stylesheet">
 		<link href="css/tilbudoversigt.css" rel="stylesheet">
@@ -31,6 +33,6 @@
         <site-navigation></site-navigation>
 
         <!-- Page content -->
-        <site-content></site-content>
+        <site-content ng-controller="AlertController as alertCtrl"></site-content>
 	</body>
 </html>
