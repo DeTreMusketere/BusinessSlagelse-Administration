@@ -19,9 +19,6 @@ app.controller('AlertController', function(SweetAlert) {
             showCancelButton: true,
             confirmButtonColor: "#DD6B55",
             confirmButtonText: "Slet"
-        },
-        function(){ 
-            SweetAlert.success("DONE!");
         });
     };
 });
