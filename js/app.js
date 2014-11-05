@@ -1,13 +1,13 @@
 var app = angular.module('app', ['ngAnimate', 'oitozero.ngSweetAlert']);
 
 app.controller('PageController', function() {
-	this.page = 1;
-	this.setPage = function(page) {
-		this.page = page;
-	};
-	this.isSet = function(page) {
-		return this.page === page;
-	};
+    this.page = 1;
+    this.setPage = function(page) {
+        this.page = page;
+    };
+    this.isSet = function(page) {
+        return this.page === page;
+    };
 });
 
 app.controller('AlertController', function(SweetAlert) {
@@ -25,14 +25,14 @@ app.controller('AlertController', function(SweetAlert) {
 
 app.directive("siteNavigation", function() {
     return {
-      restrict: 'E',
-      templateUrl: "navigation.html"
+        restrict: 'E',
+        templateUrl: "navigation.html"
     };
 });
 
 app.directive("siteContent", function() {
     return {
-      restrict: 'E',
-      templateUrl: "content.html"
+        restrict: 'E',
+        templateUrl: "content.html"
     };
 });
