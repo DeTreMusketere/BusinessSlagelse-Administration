@@ -3,23 +3,23 @@
 	<div class="panel-body">
 		<form class="form-horizontal">
 		  <fieldset>
-			<legend>Min Butik</legend>
+			<legend>Min Profil</legend>
 			<div class="form-group">
-			  <label for="inputButikNavn" class="col-lg-2  col-lg-offset-1 control-label">Butik Navn</label>
+			  <label for="inputAdresse" class="col-lg-2  col-lg-offset-1 control-label">Brugernavn</label>
 			  <div class="col-lg-6">
-				<input class="form-control" id="inputButikNavn" placeholder="Butik Navn" type="text">
+				<input class="form-control" id="inputAdresse" placeholder="Brugernavn" type="text" disabled="">
 			  </div>
 			</div>
 			<div class="form-group">
-			  <label for="inputBeskrivelse" class="col-lg-2  col-lg-offset-1 control-label">Beskrivelse</label>
+			  <label for="inputAdresse" class="col-lg-2  col-lg-offset-1 control-label">Adgangskode</label>
 			  <div class="col-lg-6">
-				<textarea class="form-control" rows="3" id="inputBeskrivelse"></textarea>
+				<a href class="btn btn-primary">Skift adgangskode</a>
 			  </div>
 			</div>
 			<div class="form-group">
-			  <label for="inputAdresse" class="col-lg-2  col-lg-offset-1 control-label">Adresse</label>
+			  <label for="inputNavn" class="col-lg-2  col-lg-offset-1 control-label">Navn</label>
 			  <div class="col-lg-6">
-				<input class="form-control" id="inputAdresse" placeholder="Adresse" type="text">
+				<input class="form-control" id="inputButikNavn" placeholder="Fornavn, efternavn" type="text">
 			  </div>
 			</div>
 			<div class="form-group">
@@ -28,24 +28,14 @@
 				<input class="form-control" id="inputTelefon" placeholder="Telefon" type="text">
 			  </div>
 			</div>
-			<div class="container form-group">
-				<label for="inputBilledgalleri" class="col-lg-2  col-lg-offset-1 control-label">Billede</label>
-				<div class="row">
-					<div class="col-md-2">
-						<br/>
-						<br/>
-						<button class="btn btn-primary" id="inputBilledgalleri" type="button">Billedgalleri</button>
-						<br/>
-						<br/>
-						<button class="btn btn-primary" id="inputUploadBillede" type="button">Upload</button>
-					</div>
-					<div class="col-md-3">
-						<img src="http://img1.wikia.nocookie.net/__cb20140811144852/austinally/images/a/ab/Smiling-llama-header.jpg" alt="Llama" style="width:304px;height:228px" class="img-thumbnail">
-					</div>
-				</div>
+			<div class="form-group">
+			  <label for="inputEmail" class="col-lg-2  col-lg-offset-1 control-label">E-mail</label>
+			  <div class="col-lg-6">
+				<input class="form-control" id="inputEmail" placeholder="E-mail" type="text">
+			  </div>
 			</div>
 			<br/>
-			<button class="btn btn-primary" id="inputUploadBillede" type="button">Gem</button>
+			<button class="btn btn-success" id="inputGem" type="button">Gem</button>
 			<br/>
 			<br/>
 		  </fieldset>
