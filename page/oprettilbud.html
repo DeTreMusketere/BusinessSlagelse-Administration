@@ -2,93 +2,99 @@
 	<br/>
 	<div class="panel-body">
 		<form class="form-horizontal">
-		  <fieldset>
-			<legend>Opret Tilbud</legend>
-			<div class="form-group">
-			  <label for="inputTitel" class="col-lg-2  col-lg-offset-1 control-label">Titel</label>
-			  <div class="col-lg-6">
-				<input class="form-control" id="inputTitel" placeholder="Titel" type="text">
-			  </div>
-			</div>
-			<div class="form-group">
-			  <label for="inputBeskrivelse" class="col-lg-2  col-lg-offset-1 control-label">Beskrivelse</label>
-			  <div class="col-lg-6">
-				<textarea class="form-control" rows="3" id="inputBeskrivelse"></textarea>
-			  </div>
-			</div>
-			<div class="form-group">
-			  <label for="inputPris" class="col-lg-2  col-lg-offset-1 control-label">Pris i kr.</label>
-			  <div class="col-lg-6">
-				<input class="form-control" id="inputPris" placeholder="Pris i kr." type="text">
-			  </div>
-			</div>
-			<div class="container form-group">
-				<label for="inputBilledgalleri" class="col-lg-2  col-lg-offset-1 control-label">Billede</label>
-				<div class="row">
-					<div class="col-md-2">
-						<br/>
-						<br/>
-						<button class="btn btn-primary" id="inputBilledgalleri" type="button">Billedgalleri</button>
-						<br/>
-						<br/>
-						<button class="btn btn-primary" id="inputUploadBillede" type="button">Upload</button>
-					</div>
-					<div class="col-md-3">
-						<img src="http://img1.wikia.nocookie.net/__cb20140811144852/austinally/images/a/ab/Smiling-llama-header.jpg" alt="Llama" style="width:304px;height:228px" class="img-thumbnail">
+			<fieldset>
+				<legend>Opret Tilbud</legend>
+				<div class="form-group">
+					<label for="inputTitel" class="col-lg-2  col-lg-offset-1 control-label">Titel</label>
+					<div class="col-lg-6">
+						<input class="form-control" id="inputTitel" placeholder="Titel" type="text">
 					</div>
 				</div>
-			</div>
-			<div class="form-group">
-			  <label for="inputStartDato" class="col-lg-2  col-lg-offset-1 control-label">Start Dato</label>
-			  <div class="input-append date col-lg-6">
-				<input  class="form-control" id="inputStartDato" placeholder="Start Dato" type="text" value="12-02-2012">
-				<span class="add-on"><i class="icon-th"></i></span>
-			  </div>
-			</div>
-			<div class="form-group">
-			  <label for="inputSlutDato" class="col-lg-2  col-lg-offset-1 control-label">Slut Dato</label>
-			  <div class="input-append date col-lg-6">
-				<input  class="form-control" id="inputSlutDato" placeholder="Slut Dato" type="text" value="12-02-2012">
-				<span class="add-on"><i class="icon-th"></i></span>
-			  </div>
-			</div>
-			<div class="form-group">
-			  <label for="inputPublishDato" class="col-lg-2  col-lg-offset-1 control-label">Publish Dato</label>
-			  <div class="input-append date col-lg-6">
-				<input  class="form-control" id="inputPublishDato" placeholder="Publish Dato" type="text" value="12-02-2012">
-				<span class="add-on"><i class="icon-th"></i></span>
-			  </div>
-			</div>
-			<div class="form-group">
-			  <label for="select" class="col-lg-2 col-lg-offset-1 control-label">Tags</label>
-			  <div class="col-lg-2">
-				<select id="select" multiple="" class="form-control">
-				  <option>1</option>
-				  <option>2</option>
-				  <option>3</option>
-				  <option>4</option>
-				  <option>5</option>
-				</select>
-			  </div>
-			  <div class="col-lg-1">
-				<button class="btn btn-primary form-control" id="left_button" type="button">Tilføj</button>
-			  </div>
-			  <div class="col-lg-1">
-				<button class="btn btn-primary form-control" id="right_button" type="button">Fjern</button>
-			  </div>
-			  <div class="col-lg-2">
-				<select multiple="" class="form-control">
-				  <option>1</option>
-				  <option>2</option>
-				  <option>3</option>
-				  <option>4</option>
-				  <option>5</option>
-				</select>
-			  </div>
-			</div>
-			<br/>
-			<button class="btn btn-success" id="inputUploadBillede" type="button">Opret Tilbud</button>
-		  </fieldset>
+				<div class="form-group">
+					<label for="inputBeskrivelse" class="col-lg-2  col-lg-offset-1 control-label">Beskrivelse</label>
+					<div class="col-lg-6">
+						<textarea class="form-control" rows="3" id="inputBeskrivelse"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPris" class="col-lg-2  col-lg-offset-1 control-label">Pris</label>
+					<div class="col-lg-6">
+						<input class="form-control" id="inputPris" placeholder="Pris i kr." type="text">
+					</div>
+				</div>
+				<div class="container form-group">
+					<label for="inputBilledgalleri" class="col-lg-2  col-lg-offset-1 control-label">Billede</label>
+					<div class="row">
+						<div class="col-md-2">
+							<br/>
+							<br/>
+							<button class="btn btn-primary btn-sm" id="inputBilledgalleri" type="button">Billedgalleri</button>
+							<br/>
+							<br/>
+							<button class="btn btn-primary btn-sm" id="inputUploadBillede" type="button">Upload</button>
+						</div>
+						<div class="col-md-3">
+							<img src="http://img1.wikia.nocookie.net/__cb20140811144852/austinally/images/a/ab/Smiling-llama-header.jpg" alt="Llama" style="width:304px;height:228px" class="img-thumbnail">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputStartDato" class="col-lg-2  col-lg-offset-1 control-label">Start Dato</label>
+					<div class="input-append date col-lg-6">
+						<input  class="form-control" id="inputStartDato" placeholder="Start Dato" type="text" value="12-02-2012">
+						<span class="add-on"><i class="icon-th"></i></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputSlutDato" class="col-lg-2  col-lg-offset-1 control-label">Slut Dato</label>
+					<div class="input-append date col-lg-6">
+						<input  class="form-control" id="inputSlutDato" placeholder="Slut Dato" type="text" value="12-02-2012">
+						<span class="add-on"><i class="icon-th"></i></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPublishDato" class="col-lg-2  col-lg-offset-1 control-label">Publish Dato</label>
+					<div class="input-append date col-lg-6">
+						<input  class="form-control" id="inputPublishDato" placeholder="Publish Dato" type="text" value="12-02-2012">
+						<span class="add-on"><i class="icon-th"></i></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="select" class="col-lg-2 col-lg-offset-1 control-label">Tags</label>
+					<div class="col-lg-2">
+						<label>Alle tags</label>
+						<select id="select" multiple="" class="form-control">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+					<div class="col-lg-1">
+						<br/>
+						<br/>
+						<a class="btn btn-primary form-control" id="left_button" type="button"><span class="glyphicon glyphicon-arrow-left"></span></a>
+					</div>
+					<div class="col-lg-1">
+						<br/>
+						<br/>
+						<a class="btn btn-primary form-control" id="right_button" type="button"><span class="glyphicon glyphicon-arrow-right"></span></a>
+					</div>
+					<div class="col-lg-2">
+						<label>Tilføjede tags</label>
+						<select multiple="" class="form-control">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+				</div>
+				<br/>
+				<button class="btn btn-success" id="inputUploadBillede" type="button">Opret Tilbud</button>
+			</fieldset>
 		</form>		
 	</div>
 </div>
