@@ -50,6 +50,9 @@
 				<a href ng-click="pageCtrl.setPage(44)">Min butik</a></li>
 
 			<!-- Generelt -->
+			<li ng-class="{ active: pageCtrl.isSet(5)}">
+				<a href ng-click="pageCtrl.setPage(5)">Min profil</a></li>
+
 			<li ng-class="{ active: pageCtrl.isSet(2)}">
 				<a href ng-click="pageCtrl.setPage(2)">Hjælp</a></li>
 
