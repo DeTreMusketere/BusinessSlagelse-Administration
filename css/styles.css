@@ -5,6 +5,13 @@ a {
 	transition: all 0.2s ease 0s;
 }
 
+button {
+  -webkit-transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -ms-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
 .content-animation.ng-hide-add,
 .content-animation.ng-hide-remove {
   -webkit-transition:0.3s linear all;
