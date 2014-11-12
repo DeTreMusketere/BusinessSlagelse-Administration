@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngAnimate', 'oitozero.ngSweetAlert']);
+var app = angular.module('app', ['ngAnimate', 'oitozero.ngSweetAlert', 'mgcrea.ngStrap']);
 
 app.controller('PageController', function() {
     this.page = 1;
