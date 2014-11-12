@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngAnimate', 'oitozero.ngSweetAlert', 'mgcrea.ngStrap']);
+var app = angular.module('app', ['ngAnimate', 'oitozero.ngSweetAlert']);
 
 app.controller('PageController', function() {
     this.page = 1;
@@ -7,6 +7,12 @@ app.controller('PageController', function() {
     };
     this.isSet = function(page) {
         return this.page === page;
+    };
+});
+
+app.controller('TestController', function() {
+    this.initDate = function() {
+        $('#myDatepicker').datepicker();
     };
 });
 
