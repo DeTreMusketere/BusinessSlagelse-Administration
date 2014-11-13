@@ -1,9 +1,11 @@
 <div class="navbar navbar-default">
 	<div class="container">
 
-		<a href ng-click="pageCtrl.setPage(1)" class="navbar-brand">Business Slagelse Administration</a>
+		<a href ng-click="pageCtrl.setPage(1)" class="navbar-brand">
+		Business Slagelse Administration
+		</a>
 
-		<ul class="nav navbar-nav navbar-right">
+		<ul class="nav navbar-nav navbar-right" ng-hide="pageCtrl.isSet(4)">
 
 			<!-- Generelt -->
 			<li ng-class="{ active: pageCtrl.isSet(1)}">
@@ -59,8 +61,8 @@
 				<li ng-class="{ active: pageCtrl.isSet(900)}">
 				<a href ng-click="pageCtrl.setPage(900)">Test side</a></li>
 
-			<li ng-class="{ active: pageCtrl.isSet(3)}">
-				<a href ng-click="pageCtrl.setPage(3)"><span class="glyphicon glyphicon-log-out"></span></a></li>
+			<li>
+				<a href ng-click="pageCtrl.setPage(4)"><span class="glyphicon glyphicon-log-out"></span></a></li>
 
 		</ul>
 

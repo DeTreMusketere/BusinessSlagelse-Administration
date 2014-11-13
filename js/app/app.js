@@ -42,3 +42,10 @@ app.directive("siteContent", function() {
         templateUrl: "content.html"
     };
 });
+
+app.directive("pkDatePicker", function() {
+    return {
+        restrict: 'E',
+        templateUrl: "additions/datepicker.html"
+    };
+});

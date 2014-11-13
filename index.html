@@ -8,49 +8,45 @@
 		<!-- Set charset -->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-		<!-- Import jquery -->
+		<!-- jquery -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-		<!-- Import AngularJS -->
+		<!-- AngularJS -->
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 		
-		<!-- Import AngularJS Animate -->
-		<script type="text/javascript" src="js/angular-animate.min.js"></script>
-		
-		<!-- Import bootstrap stylesheet -->
+		<!-- Bootstrap -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		
-		<!-- Import bootstrap script -->
 		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		
-		<!-- Import SweetAlert script -->
+		<!-- AngularJS Animate -->
+		<script type="text/javascript" src="js/angular-animate.min.js"></script>
+
+		<!-- SweetAlert -->
 		<script type="text/javascript" src="js/sweet-alert.min.js"></script>
-		
-		<!-- Import SweetAlert stylesheet -->
 		<link rel="stylesheet" type="text/css" href="css/sweet-alert.css">
 		
-		<!-- Import ngSweetAlert script -->
+		<!-- ngSweetAlert -->
 		<script type="text/javascript" src="js/ngSweetAlert.js"></script>
 
 		<!-- Fuel UX -->
 		<link href="//www.fuelcdn.com/fuelux/3.2.1/css/fuelux.min.css" rel="stylesheet">
 		<script src="//www.fuelcdn.com/fuelux/3.2.1/js/fuelux.min.js"></script>
 
-		<!-- Import bootstrap theme -->
+		<!-- Bootswatch theme (Flatly) -->
 		<link href="css/theme.css" rel="stylesheet">
 
 		<!-- #### CUSTOM STUFF #### -->
 		
-		<!-- Import AngularJS application -->
+		<!-- AngularJS application -->
 		<script type="text/javascript" src="js/app/app.js"></script>
 		
-		<!-- Import custom styles -->
-
+		<!-- Custom styles -->
 		<link href="css/custom/hjelp.css" rel="stylesheet">
 		<link href="css/custom/tilbudoversigt.css" rel="stylesheet">
 		<link href="css/custom/styles.css" rel="stylesheet">
 	</head>
 	<body class="well" ng-controller="PageController as pageCtrl">
+	{{pageCtrl.setPage(1)}}
 		<!-- Navigation -->
         <site-navigation></site-navigation>
 
