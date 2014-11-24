@@ -1,0 +1,26 @@
+{
+  "name": "his-web",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pkkann/his-web",
+  "authors": [
+    "Patrick Laptop <pkkann@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.3.1",
+    "bootstrap": "~3.3.1",
+    "jquery": "~2.1.1",
+    "angular-ui-router": "~0.2.11",
+    "bootstrap-switch": "~3.2.1",
+    "fuelux": "~3.2.1",
+    "angular-animate": "~1.3.2"
+  }
+}

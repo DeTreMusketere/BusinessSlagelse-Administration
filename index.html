@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<!-- Set title -->
+		<title>Bootstrap with Angular example</title>
+
+		<!-- Set charset -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		<!-- jquery -->
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+
+		<!-- AngularJS -->
+		<script type="text/javascript" src="bower_components/angularjs/angular.min.js"></script>
+
+		<!-- Angular-UI-Router -->
+		<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+		<!-- AngularJS Animate -->
+		<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+		
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<!-- Bootswatch theme (Flatly) -->
+		<link href="css/theme.css" rel="stylesheet">
+		
+		<!-- AngularJS application -->
+		<script type="text/javascript" src="application/app.js"></script>
+		<script type="text/javascript" src="application/controllers/stateController.js"></script>
+		
+		<!-- Custom styles -->
+		<link href="css/custom/styles.css" rel="stylesheet">
+
+	</head>
+	<body>
+		<div ng-app="app" ng-controller="StateController as stateCtrl">
+	        <header ng-include="'templates/navigation.html'"></header>
+	        <div ui-view></div>
+        </div>
+	</body>
+</html>
