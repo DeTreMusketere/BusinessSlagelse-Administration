@@ -3,13 +3,17 @@
 	<head>
 		
 		<!-- Set title -->
-		<title>Bootstrap with Angular example</title>
+		<title>Shopping Slagelse Administration</title>
 
 		<!-- Set charset -->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-		<!-- jquery -->
+		<!-- jQuery -->
 		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+
+		<!-- Bootstrap -->
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 
 		<!-- AngularJS -->
 		<script type="text/javascript" src="bower_components/angularjs/angular.min.js"></script>
@@ -17,28 +21,43 @@
 		<!-- Angular-UI-Router -->
 		<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
-		<!-- AngularJS Animate -->
-		<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
-		
-		<!-- Bootstrap -->
-		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- Bootbox -->
+		<script type="text/javascript" src="bower_components/bootbox/bootbox.js"></script>
+
+		<!-- SimplyToast -->
+		<script type="text/javascript" src="other_components/simply-toast/simply-toast.min.js"></script>
+		<link rel="stylesheet" href="other_components/simply-toast/simply-toast.min.css">
+		<script type="text/javascript" src="application/misc/toast.js"></script>
+
+		<!-- ngCookies -->
+		<script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.min.js"></script>
 
 		<!-- Bootswatch theme (Flatly) -->
 		<link href="css/theme.css" rel="stylesheet">
 		
 		<!-- AngularJS application -->
+		<script type="text/javascript" src="application/misc/routes.js"></script>
 		<script type="text/javascript" src="application/app.js"></script>
+		<script type="text/javascript" src="application/runs/loadCookies.js"></script>
+		<script type="text/javascript" src="application/configs/routeProvider.js"></script>
+		<script type="text/javascript" src="application/runs/userRedirection.js"></script>
+		<script type="text/javascript" src="application/services/sessionService.js"></script>
+		<script type="text/javascript" src="application/services/sqlService.js"></script>
+		<script type="text/javascript" src="application/services/authService.js"></script>
 		<script type="text/javascript" src="application/controllers/stateController.js"></script>
+		<script type="text/javascript" src="application/controllers/loginController.js"></script>
+		<script type="text/javascript" src="application/controllers/defaultController.js"></script>
 		
 		<!-- Custom styles -->
 		<link href="css/custom/styles.css" rel="stylesheet">
 
 	</head>
 	<body>
-		<div ng-app="app" ng-controller="StateController as stateCtrl">
-	        <header ng-include="'templates/navigation.html'"></header>
-	        <div ui-view></div>
+		<div ng-app="app" ng-controller="DefaultController as defaultCtrl">
+			<div ng-controller="StateController as stateCtrl">
+		        <header ng-include="'templates/navigation.html'"></header>
+		        <div ui-view></div>
+	        </div>
         </div>
 	</body>
 </html>

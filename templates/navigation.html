@@ -8,7 +8,7 @@
 		<ul class="nav navbar-nav navbar-right" ng-hide="stateCtrl.isState('login')">
 			<li ui-sref-active="active">
 				<a href ui-sref="forside">Forside</a></li>
-			<li ng-class="{active: stateCtrl.isState('tilbud_oversigt') || stateCtrl.isState('tilbud_opret')}" class="dropdown">
+			<li ng-show="!getIsAdmin()" ng-class="{active: stateCtrl.isState('tilbud_oversigt') || stateCtrl.isState('tilbud_opret')}" class="dropdown">
 				<a href class="dropdown-toggle" data-toggle="dropdown">Tilbud <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li ui-sref-active="active">
@@ -18,7 +18,7 @@
 						<a ui-sref="tilbud_opret" href>Opret tilbud</a></li>
 				</ul>
 			</li>
-			<li ng-class="{active: stateCtrl.isState('butikker_oversigt') || stateCtrl.isState('butikker_opret')}" class="dropdown">
+			<li ng-show="getIsAdmin()" ng-class="{active: stateCtrl.isState('butikker_oversigt') || stateCtrl.isState('butikker_opret')}" class="dropdown">
 				<a href class="dropdown-toggle" data-toggle="dropdown">Butikker <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li ui-sref-active="active">
@@ -28,7 +28,7 @@
 						<a ui-sref="butikker_opret" href>Opret butik</a></li>
 				</ul>
 			</li>
-			<li ng-class="{active: stateCtrl.isState('tags_oversigt') || stateCtrl.isState('tags_opret')}" class="dropdown">
+			<li ng-show="getIsAdmin()" ng-class="{active: stateCtrl.isState('tags_oversigt') || stateCtrl.isState('tags_opret')}" class="dropdown">
 				<a href class="dropdown-toggle" data-toggle="dropdown">Tags <b class="caret"></b></a>
 				<ul class="dropdown-menu">
 					<li ui-sref-active="active">
@@ -38,14 +38,14 @@
 						<a ui-sref="tags_opret" href>Opret tag</a></li>
 				</ul>
 			</li>
-			<li ui-sref-active="active">
+			<li ng-show="!getIsAdmin()" ui-sref-active="active">
 				<a ui-sref="minbutik" href>Min butik</a></li>
 			<li ui-sref-active="active">
 				<a ui-sref="minprofil" href>Min profil</a></li>
 			<li ui-sref-active="active">
 				<a ui-sref="hjelp" href>Hjælp</a></li>
 			<li>
-				<a ui-sref="login" href><span class="glyphicon glyphicon-log-out"></span></a></li>
+				<a href ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span></a></li>
 		</ul>
 
 	</div>
