@@ -2,9 +2,9 @@
 	//Create Database connection
     // Create connection
 	$host = "194.255.32.68";
-	$user = "his";
-	$pass = "hPPsYZQaCGfwVdc8";
-	$db = "his";
+	$user = "dbs";
+	$pass = "LDZz9x6t6QMXjzG7";
+	$db = "dbs";
 
 	$conn = new mysqli($host, $user, $pass, $db);
 	// Check connection

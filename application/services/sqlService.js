@@ -1,5 +1,5 @@
 angular.module('app').service('SQLService', ['$http', function($http) {
-	var site = "http://localhost:8888/his-web-prototype2/";
+	var site = "http://localhost:8888/BusinessSlagelse-Administration/";
 
 	this.insert = function($table, $columns, $values) {
 		var page = "php/insert.php";

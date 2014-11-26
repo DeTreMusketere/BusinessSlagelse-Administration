@@ -8,6 +8,9 @@ angular.module('app').run(function($rootScope, SessionService, $state) {
 				} else if(window.routes[i].requireAdmin && !SessionService.getIsAdmin()) {
 					event.preventDefault();
 					$state.go('error-admin');
+				} else if(window.routes[i].requireNotAdmin && SessionService.getIsAdmin()) {
+					event.preventDefault();
+					$state.go('error-notadmin');
 				};
 			};
 		};
