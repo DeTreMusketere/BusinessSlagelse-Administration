@@ -1,4 +1,4 @@
-angular.module('app').service("SaleService", function(SQLService) {
+angular.module('app').service("TagService", function(SQLService) {
 	var sales;
 
 	this.create = function(){
