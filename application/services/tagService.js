@@ -1,5 +1,5 @@
 angular.module('app').service("TagService", function(SQLService) {
-	var sales;
+	var tags;
 
 	this.create = function(){
 
@@ -18,10 +18,19 @@ angular.module('app').service("TagService", function(SQLService) {
 	};
 
 	this.getAll = function() {
-
+		return tags;
 	};
 
-	this.load = function() {
-
+	this.load = function(success, empty) {
+		SQLService.selectAll("tag").success(function(response) {
+			tags = response;
+			if(success && empty) {
+				if(response.length > 0) {
+					success();
+				} else {
+					empty();
+				};
+			};
+		});
 	};
 });

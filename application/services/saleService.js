@@ -18,10 +18,19 @@ angular.module('app').service("SaleService", function(SQLService) {
 	};
 
 	this.getAll = function() {
-
+		return sales;
 	};
 
-	this.load = function() {
-
+	this.load = function(success, empty) {
+		SQLService.selectAll("sale").success(function(response) {
+			sales = response;
+			if(success && empty) {
+				if(response.length > 0) {
+					success();
+				} else {
+					empty();
+				};
+			};
+		});
 	};
 });
