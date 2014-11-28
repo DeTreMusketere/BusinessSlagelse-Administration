@@ -1,25 +1,29 @@
-angular.module('app').service('UserStoreService', function(SQLService) {
+angular.module('app').service('UserStoreService', function(SQLService, IdService) {
 	var users;
 	var stores;
 
 	this.create = function(user, store, success, fail) {
+		store.id_store = IdService.getNextStoreId();
+		user.id_user = IdService.getNextUserId();
+		user.store_id = store.id_store;
+
 		// Create store
 		$table = "store";
 		$columns = ["id_store", "name", "description", "address", "phone"];
 		$values = [store.id_store, "'" + store.name + "'", "'" + store.description + "'", "'" + store.address + "'", "'" + store.phone + "'"];
 
 		SQLService.insert($table, $columns, $values).success(function(response) {
-			if(response === true) {
+			if(response == true) {
 				stores.push(store);
 				console.log("Store got inserted successfully");
 
 				// Create user
 				$table = "user";
 				$columns = ["id_user", "name", "username", "password", "email", "phone", "store_id", "administrator"];
-				$values = [user.id_user, "'" + user.name + "'", "'" + user.username + "'", "'" + user.password + "'", "'" + user.email + "'", "'" + user.phone + "'", user.store_id, user.administrator];
+				$values = [user.id_user, "'" + user.name + "'", "'" + user.username + "'", "'" + user.password + "'", "'" + user.email + "'", "'" + user.phone + "'", user.store_id, "0"];
 
 				SQLService.insert($table, $columns, $values).success(function(response) {
-					if(response === true) {
+					if(response == true) {
 						users.push(user);
 						console.log("User got inserted successfully");
 						success();

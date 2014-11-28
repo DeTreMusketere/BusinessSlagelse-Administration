@@ -10,7 +10,7 @@ angular.module('app').run(function(IdService, UserStoreService, SaleService, Tag
 			console.warn("Users are empty, can that be right?");
 		},
 		function() {
-			$stores = UerStoreService.getAll().stores;
+			$stores = UserStoreService.getAll().stores;
 			IdService.loadStores($stores);
 		},
 		function() {

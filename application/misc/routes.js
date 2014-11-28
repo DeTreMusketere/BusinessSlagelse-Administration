@@ -30,7 +30,8 @@ window.routes =
     },
     "butikker_opret": {
         url: '/butikker_opret',
-        templateUrl: 'pages/opretbutik.html', 
+        templateUrl: 'pages/opretbutik.html',
+        controller: 'OpretButikController',
         requireLogin: true,
         requireAdmin: true,
         requireNotAdmin: false
