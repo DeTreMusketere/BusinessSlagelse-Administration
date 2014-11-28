@@ -1,9 +1,10 @@
-angular.module('app').controller('OpretButikController', function($scope, UserStoreService) {
+angular.module('app').controller('OpretButikController', function($scope, UserStoreService, $state) {
 	$scope.create = function() {
 		if($scope.store && $scope.user) {
 			UserStoreService.create($scope.user, $scope.store,
 				function() {
 					$.simplyToast('Success', 'success');
+					$state.go('butikker_oversigt');
 				},
 				function(code) {
 					if(code == 1) {
