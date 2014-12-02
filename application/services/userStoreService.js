@@ -1,6 +1,4 @@
 angular.module('app').service('UserStoreService', function(SQLService, IdService) {
-	var users;
-	var stores;
 
 	this.create = function(user, store, success, fail) {
 		store.id_store = IdService.getNextStoreId();
@@ -14,9 +12,6 @@ angular.module('app').service('UserStoreService', function(SQLService, IdService
 
 		SQLService.insert($table, $columns, $values).success(function(response) {
 			if(response == true) {
-				stores.push(store);
-				console.log("Store got inserted successfully");
-
 				// Create user
 				$table = "user";
 				$columns = ["id_user", "name", "username", "password", "email", "phone", "store_id", "administrator"];
@@ -24,16 +19,12 @@ angular.module('app').service('UserStoreService', function(SQLService, IdService
 
 				SQLService.insert($table, $columns, $values).success(function(response) {
 					if(response == true) {
-						users.push(user);
-						console.log("User got inserted successfully");
 						success();
 					} else {
-						console.log("Could not insert user");
 						fail(2);
 					};
 				});
 			} else {
-				console.error("Could not insert store");
 				fail(1);
 			};
 		});

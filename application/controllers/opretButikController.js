@@ -20,7 +20,6 @@ angular.module('app').controller('OpretButikController', function($scope, UserSt
 					
 				});
 		} else {
-			console.error("Some fields where not filled out, or some where filled incorrectly");
 			$.simplyToast('Nogle felter blev ikke udfyldt korrekt', 'danger');
 			$scope.createButton.stop();
 
