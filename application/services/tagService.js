@@ -17,20 +17,9 @@ angular.module('app').service("TagService", function(SQLService) {
 
 	};
 
-	this.getAll = function() {
-		return tags;
-	};
-
-	this.load = function(success, empty) {
+	this.getAll = function(callback) {
 		SQLService.selectAll("tag").success(function(response) {
-			tags = response;
-			if(success && empty) {
-				if(response.length > 0) {
-					success();
-				} else {
-					empty();
-				};
-			};
+			callback(response);
 		});
 	};
 });

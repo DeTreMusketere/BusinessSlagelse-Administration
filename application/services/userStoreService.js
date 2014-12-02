@@ -55,37 +55,24 @@ angular.module('app').service('UserStoreService', function(SQLService, IdService
 
 	};
 
-	this.getAll = function() {
-		$data = {
-			'users' : users,
-			'stores' : stores
-		};
-		return $data;
+	this.login = function(user, success, fail) {
+		 SQLService.select("user", ["username", "password", "name", "administrator"], ["username", "password"], ["'"+user.username+"'", "'"+user.password+"'"]).
+		 success(function($response) {
+		 	if($response.length == 0) {
+		 		fail();
+		 	} else {
+		 		success($response);
+		 	};
+		 });
 	};
 
-	this.load = function(successUsers, emptyUsers, successStores, emptyStores) {
-		// Load users
+	this.getAll = function(callbackUsers, callbackStores) {
 		SQLService.selectAll("user").success(function(response) {
-			users = response;
-			if(successUsers && emptyUsers) {
-				if(response.length > 0) {
-					successUsers();
-				} else {
-					emptyUsers();
-				};
-			};
+			callbackUsers(response);
 		});
 		
-		// Load stores
 		SQLService.selectAll("store").success(function(response) {
-			stores = response;
-			if(successStores && emptyStores) {
-				if(response.length > 0) {
-					successStores();
-				} else {
-					emptyStores();
-				};
-			};
+			callbackStores(response);
 		});
 	};
 });
