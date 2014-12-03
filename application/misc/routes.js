@@ -46,6 +46,7 @@ window.routes =
     "tags_opret": {
         url: '/tags_opret',
         templateUrl: 'pages/oprettag.html', 
+        controller: 'OpretTagController', 
         requireLogin: true,
         requireAdmin: true,
         requireNotAdmin: false

@@ -1,8 +1,8 @@
-angular.module('app').service("TagService", function(SQLService) {
+angular.module('app').service("TagService", function(SQLService, IdService) {
 	var tags;
 
-	this.create = function(){
-
+	this.create = function(tag, success, fail){
+		tag.id_tag = IdService.getNextTagId();
 	};
 
 	this.save = function() {
