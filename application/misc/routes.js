@@ -9,7 +9,8 @@ window.routes =
     },
     "tilbud_oversigt": {
         url: '/tilbud_oversigt',
-        templateUrl: 'pages/tilbudoversigt.html', 
+        templateUrl: 'pages/tilbudoversigt.html',
+        controller: 'TilbudOversigtController',
         requireLogin: true,
         requireAdmin: false,
         requireNotAdmin: true
