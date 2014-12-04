@@ -1,5 +1,5 @@
 angular.module('app').controller('OpretTilbudController', function($scope, SaleService, $state) {
-	// $scope.createButton = Ladda.create( document.getElementById('buttonCreate') );
+	$scope.createButton = Ladda.create( document.getElementById('buttonCreate') );
 	
 	$scope.create = function() {
 		if($scope.sale) {

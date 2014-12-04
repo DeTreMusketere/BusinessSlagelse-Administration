@@ -17,6 +17,7 @@ window.routes =
     "tilbud_opret": {
         url: '/tilbud_opret',
         templateUrl: 'pages/oprettilbud.html', 
+        controller: 'OpretTilbudController',
         requireLogin: true,
         requireAdmin: false,
         requireNotAdmin: true
