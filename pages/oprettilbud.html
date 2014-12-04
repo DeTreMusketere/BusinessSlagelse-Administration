@@ -1,25 +1,25 @@
 ﻿<div id="OpretTilbudMaster" class="container panel panel-default" style="text-align: center">
 	<br/>
 	<div class="panel-body">
-		<form class="form-horizontal">
+		<form class="form-horizontal" name="createForm" novalidate ng-submit="create()">
 			<fieldset>
 				<legend>Opret Tilbud</legend>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : createForm.saleName.$invalid && createForm.saleName.$dirty}">
 					<label for="inputTitel" class="col-lg-2  col-lg-offset-1 control-label">Titel</label>
 					<div class="col-lg-6">
-						<input class="form-control" id="inputTitel" placeholder="Chokolade" type="text">
+						<input class="form-control" id="inputTitel" placeholder="Chokolade" name="saleName" ng-model="sale.name" type="text" required>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : createForm.saleDescription.$invalid && createForm.saleDescription.$dirty}">
 					<label for="inputBeskrivelse" class="col-lg-2  col-lg-offset-1 control-label">Beskrivelse</label>
 					<div class="col-lg-6">
-						<textarea class="form-control" rows="3" id="inputBeskrivelse"></textarea>
+						<textarea class="form-control" rows="3" id="inputBeskrivelse" name="saleDescription" ng-model="sale.description" required></textarea>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : createForm.salePrice.$invalid && createForm.salePrice.$dirty}">
 					<label for="inputPris" class="col-lg-2  col-lg-offset-1 control-label">Pris i kr.</label>
 					<div class="col-lg-6">
-						<input class="form-control" id="inputPris" placeholder="16" type="text">
+						<input class="form-control" id="inputPris" placeholder="16" type="text" name="salePrice" ng-model="sale.price" required>
 					</div>
 				</div>
 				<div class="container form-group">
@@ -38,22 +38,25 @@
 						</div>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : createForm.saleStart.$invalid && createForm.saleStart.$dirty}">
 					<label for="inputStartDato" class="col-lg-2  col-lg-offset-1 control-label">Start Dato</label>
 					<div class="input-append date col-lg-6">
-						<pk-date-picker></pk-date-picker>
+						<!--<pk-date-picker></pk-date-picker>-->
+						<input class="form-control" id="inputStartDato" placeholder="1999/12/13" type="text" name="saleStart" ng-model="sale.start" required>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : createForm.saleEnd.$invalid && createForm.saleEnd.$dirty}">
 					<label for="inputSlutDato" class="col-lg-2  col-lg-offset-1 control-label">Slut Dato</label>
 					<div class="input-append date col-lg-6">
-						<pk-date-picker></pk-date-picker>
+						<!--<pk-date-picker></pk-date-picker>-->
+						<input class="form-control" id="inputSlutDato" placeholder="1999/12/13" type="text" name="saleEnd" ng-model="sale.end" required>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : createForm.salePublish.$invalid && createForm.salePublish.$dirty}">
 					<label for="inputPublishDato" class="col-lg-2  col-lg-offset-1 control-label">Publish Dato</label>
 					<div class="input-append date col-lg-6">
-						<pk-date-picker></pk-date-picker>
+						<!--<pk-date-picker></pk-date-picker>-->
+						<input class="form-control" id="inputPublishDato" placeholder="1999/12/13" type="text" name="salePublish" ng-model="sale.publish" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -90,7 +93,7 @@
 					</div>
 				</div>
 				<br/>
-				<button class="btn btn-success" id="inputUploadBillede" type="button">Opret Tilbud</button>
+				<button class="btn btn-success ladda-button" data-style="expand-right" id="buttonCreate" type="submit"><span class="ladda-label">Opret tilbud</span></button>
 			</fieldset>
 		</form>		
 	</div>
