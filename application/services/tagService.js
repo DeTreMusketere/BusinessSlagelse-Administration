@@ -1,8 +1,19 @@
 angular.module('app').service("TagService", function(SQLService, IdService) {
-	var tags;
 
 	this.create = function(tag, success, fail){
 		tag.id_tag = IdService.getNextTagId();
+
+		$table = "tag";
+		$columns = ["id_tag", "name", "description"];
+		$values = [tag.id_tag, "'" + tag.name + "'", "'" + tag.description + "'"];
+
+		SQLService.insert($table, $columns, $values).success(function(response) {
+			if(response == true) {
+				success();
+			} else {
+				fail();
+			}
+		});
 	};
 
 	this.save = function() {
