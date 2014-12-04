@@ -47,7 +47,7 @@ angular.module('app').service('UserStoreService', function(SQLService, IdService
 	};
 
 	this.login = function(user, success, fail) {
-		 SQLService.select("user", ["username", "password", "name", "administrator"], ["username", "password"], ["'"+user.username+"'", "'"+user.password+"'"]).
+		 SQLService.select("user", ["username", "password", "name", "administrator", "store_id"], ["username", "password"], ["'"+user.username+"'", "'"+user.password+"'"]).
 		 success(function($response) {
 		 	if($response.length == 0) {
 		 		fail();

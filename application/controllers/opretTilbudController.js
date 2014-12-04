@@ -7,7 +7,7 @@ angular.module('app').controller('OpretTilbudController', function($scope, SaleS
 			SaleService.create($scope.sale,
 				function() {
 					$.simplyToast('Success', 'success');
-					$state.go('butikker_oversigt');
+					$state.go('tilbud_oversigt');
 				},
 				function() {
 					$.simplyToast('Der skete en uventet fejl da salget skulle oprettes', 'danger');
