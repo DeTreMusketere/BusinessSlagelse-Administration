@@ -38,7 +38,7 @@
 									<a href class="btn btn-info btn-xs dropdown-toggle" data-toggle="dropdown">Mere <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href>Rediger</a></li>
-										<li><a href>Slet</a></li>
+										<li><a ng-click="setSaleToDelete(sale)" data-toggle="modal" data-target="#deleteModal" href>Slet</a></li>
 									</ul>
 								</div>
 							</td>
@@ -48,4 +48,22 @@
 			</div>
 		</center>
 	</div>
+</div>
+
+<!-- Delete modal -->
+<div class="modal fade" id="deleteModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Er du sikker?</h4>
+      </div>
+      <div class="modal-body">
+       	<p>Er du sikker på du vil slette det valgte tilbud?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuller</button>
+        <button type="button" ng-click="delete()" class="btn btn-danger">Slet</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -23,8 +23,18 @@ angular.module('app').service("SaleService", function(SQLService, SessionService
 
 	};
 
-	this.delete = function() {
-
+	this.delete = function(sale, success, fail) {
+		$table = "sale";
+		$idColumn = "id_sale";
+		$id = sale.id_sale;
+		SQLService.remove($table, $idColumn, $id).
+			success(function(response) {
+				if(response == true) {
+					success();
+				} else {
+					fail();
+				};
+			});
 	};
 
 	this.get = function() {

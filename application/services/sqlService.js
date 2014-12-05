@@ -25,11 +25,12 @@ angular.module('app').service('SQLService', ['$http', function($http) {
 
 		return $http.post(site + page, $data);
 	};
-	this.remove = function($table, $id) {
+	this.remove = function($table, $idColumn, $id) {
 		var page = "php/delete.php";
 
 		$data = {
 			'table' : $table,
+			'idColumn' : $idColumn,
 			'id' : $id
 		};
 
