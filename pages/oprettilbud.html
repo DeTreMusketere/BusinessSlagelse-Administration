@@ -63,32 +63,24 @@
 					<label for="select" class="col-lg-2 col-lg-offset-1 control-label">Tags</label>
 					<div class="col-lg-2">
 						<label>Alle tags</label>
-						<select id="select" multiple="" class="form-control">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
+						<select id="AvailableTagsID" multiple="true" class="form-control">
+							<option ng-repeat="tag in availableTags">{{availableTags.name}}</option>
 						</select>
 					</div>
 					<div class="col-lg-1">
 						<br/>
 						<br/>
-						<a class="btn btn-primary form-control" id="left_button" type="button"><span class="glyphicon glyphicon-arrow-left"></span></a>
+						<a class="btn btn-primary form-control" id="left_button" type="button" ng-click="removeSelectedTag()"><span class="glyphicon glyphicon-arrow-left"></span></a>
 					</div>
 					<div class="col-lg-1">
 						<br/>
 						<br/>
-						<a class="btn btn-primary form-control" id="right_button" type="button"><span class="glyphicon glyphicon-arrow-right"></span></a>
+						<a class="btn btn-primary form-control" id="right_button" type="button" ng-click="moveSelectedTag()"><span class="glyphicon glyphicon-arrow-right"></span></a>
 					</div>
 					<div class="col-lg-2">
 						<label>Tilføjede tags</label>
-						<select multiple="" class="form-control">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
+						<select id="SelectedTagsID" multiple="" class="form-control">
+							<option ng-repeat="tag in selectedTags">{{selectedTags.name}}</option>
 						</select>
 					</div>
 				</div>
