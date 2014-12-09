@@ -1,9 +1,9 @@
-angular.module('app').controller("MinButikController", function($scope, UserStoreService, SessionService){
+angular.module('app').controller("MinButikController", function($scope, StoreService, SessionService){
 $scope.store = [];
 	
 	$scope.load = function(){
 		console.log("Hai");
-		UserStoreService.getStore(SessionService.getUser().store_id, function(response){
+		StoreService.get(SessionService.getUser().store_id, function(response){
 			$scope.store = response;
 			
 		});
