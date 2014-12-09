@@ -10,6 +10,11 @@ angular.module('app').service('SessionService', function($cookieStore){
         };
     };
 
+    this.reSetUserAuthenticated = function(userToAuthenticate) {
+        this.setUserAuthenticated(null);
+        this.setUserAuthenticated(userToAuthenticate);
+    };
+
     this.getAuthenticated = function(){
         if(user) {
             return true;

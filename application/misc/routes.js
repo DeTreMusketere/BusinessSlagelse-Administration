@@ -62,7 +62,8 @@ window.routes =
     },
     "minprofil": {
         url: '/minprofil',
-        templateUrl: 'pages/minprofil.html', 
+        templateUrl: 'pages/minprofil.html',
+        controller: 'MinProfilController',
         requireLogin: true,
         requireAdmin: false,
         requireNotAdmin: false
