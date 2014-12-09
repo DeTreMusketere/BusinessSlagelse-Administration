@@ -1,31 +1,31 @@
 <div id="MinButikMaster" class="container panel panel-default" style="text-align: center">
 	<br/>
 	<div class="panel-body">
-		<form class="form-horizontal">
+		<form class="form-horizontal" name="minButik" ng-submit="save()">
 		  <fieldset>
 			<legend>Min Butik</legend>
 			<div class="form-group">
 			  <label for="inputButikNavn" class="col-lg-2  col-lg-offset-1 control-label">Navn</label>
 			  <div class="col-lg-6">
-				<input class="form-control" id="inputButikNavn" placeholder="Netto" type="text">
+				<input class="form-control" id="inputButikNavn" placeholder="Netto" ng-model="store.name" type="text">
 			  </div>
 			</div>
 			<div class="form-group">
 			  <label for="inputBeskrivelse" class="col-lg-2  col-lg-offset-1 control-label">Beskrivelse</label>
 			  <div class="col-lg-6">
-				<textarea class="form-control" rows="3" id="inputBeskrivelse"></textarea>
+				<textarea class="form-control" rows="3" id="inputBeskrivelse" ng-model="store.description"></textarea>
 			  </div>
 			</div>
 			<div class="form-group">
 			  <label for="inputAdresse" class="col-lg-2  col-lg-offset-1 control-label">Adresse</label>
 			  <div class="col-lg-6">
-				<input class="form-control" id="inputAdresse" placeholder="Nallergade 16 7590 Lorteland" type="text">
+				<input class="form-control" id="inputAdresse" placeholder="Nallergade 16 7590 Lorteland" type="text" ng-model="store.address">
 			  </div>
 			</div>
 			<div class="form-group">
 			  <label for="inputTelefon" class="col-lg-2  col-lg-offset-1 control-label">Telefon</label>
 			  <div class="col-lg-6">
-				<input class="form-control" id="inputTelefon" placeholder="+4547594758" type="text">
+				<input class="form-control" id="inputTelefon" placeholder="+4547594758" type="text" ng-model="store.phone">
 			  </div>
 			</div>
 			<div class="container form-group">
@@ -45,7 +45,7 @@
 				</div>
 			</div>
 			<br/>
-			<button class="btn btn-success" id="inputUploadBillede" type="button">Gem</button>
+			<button class="btn btn-success" id="inputUploadBillede" type="submit" ng-disabled="2 > 1">Gem</button>
 			<br/>
 			<br/>
 		  </fieldset>

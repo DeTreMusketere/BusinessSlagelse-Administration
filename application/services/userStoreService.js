@@ -38,8 +38,10 @@ angular.module('app').service('UserStoreService', function(SQLService, IdService
 
 	};
 
-	this.getStore = function() {
-
+	this.getStore = function(id_store, callback) {
+		SQLService.select("store", ["name", "description", "address", "phone"], ["id_store"], [id_store]).success(function(response) {
+			callback(response[0]);			
+		});
 	};
 
 	this.getUser = function() {

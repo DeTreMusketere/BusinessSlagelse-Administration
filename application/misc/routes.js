@@ -56,6 +56,7 @@ window.routes =
     "minbutik": {
         url: '/minbutik',
         templateUrl: 'pages/minbutik.html', 
+        controller: 'MinButikController', 
         requireLogin: true,
         requireAdmin: false,
         requireNotAdmin: true
