@@ -30,26 +30,8 @@ angular.module('app').service('UserStoreService', function(SQLService, IdService
 		});
 	};
 
-	this.save = function() {
-
-	};
-
-	this.delete = function() {
-
-	};
-
-	this.getStore = function(id_store, callback) {
-		SQLService.select("store", ["name", "description", "address", "phone"], ["id_store"], [id_store]).success(function(response) {
-			callback(response[0]);			
-		});
-	};
-
-	this.getUser = function() {
-
-	};
-
 	this.login = function(user, success, fail) {
-		 SQLService.select("user", ["username", "password", "name", "administrator", "phone", "email", "store_id"], ["username", "password"], ["'"+user.username+"'", "'"+user.password+"'"]).
+		 SQLService.select("user", ["id_user", "name", "username", "password", "email", "phone", "store_id", "administrator"], ["username", "password"], ["'"+user.username+"'", "'"+user.password+"'"]).
 		 success(function($response) {
 		 	if($response.length == 0) {
 		 		fail();

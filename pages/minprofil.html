@@ -16,26 +16,26 @@
 				<a href class="btn btn-primary">Skift adgangskode</a>
 			  </div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error' : profileForm.name.$invalid && submitted}">
 			  <label for="inputNavn" class="col-lg-2  col-lg-offset-1 control-label">Navn</label>
 			  <div class="col-lg-6">
-				<input class="form-control" id="inputButikNavn" ng-model="user.name" placeholder="Birgitte Sørensen" type="text" required>
+				<input class="form-control" name="name" ng-model="user.name" placeholder="Birgitte Sørensen" type="text" required>
 			  </div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error' : profileForm.phone.$invalid && submitted || !isPhoneValid() && submitted}">
 			  <label for="inputTelefon" class="col-lg-2  col-lg-offset-1 control-label">Telefon</label>
 			  <div class="col-lg-6">
-				<input class="form-control" id="inputTelefon" ng-model="user.phone" placeholder="+4547594758" type="text" required>
+				<input class="form-control" name="phone" ng-model="user.phone" placeholder="+4547594758" type="text" required>
 			  </div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error' : profileForm.email.$invalid && submitted}">
 			  <label for="inputEmail" class="col-lg-2  col-lg-offset-1 control-label">E-mail</label>
 			  <div class="col-lg-6">
-				<input class="form-control" id="inputEmail" ng-model="user.email" placeholder="mail@mail.dk" type="text" required>
+				<input class="form-control" name="email" ng-model="user.email" placeholder="mail@mail.dk" type="email" required>
 			  </div>
 			</div>
 			<br/>
-			<button class="btn btn-success" id="inputGem" type="submit">Gem</button>
+			<button class="btn btn-success" id="inputGem" ng-disabled="!isChanged()" type="submit">Gem</button>
 			<br/>
 			<br/>
 		  </fieldset>
