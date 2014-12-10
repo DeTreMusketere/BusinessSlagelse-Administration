@@ -22,7 +22,7 @@
 				<input class="form-control" name="address" id="inputAdresse" placeholder="Nallergade 16 7590 Lorteland" type="text" ng-model="store.address" required>
 			  </div>
 			</div>
-			<div class="form-group" ng-class="{'has-error' : minButik.phone.$invalid && submitted}">
+			<div class="form-group" ng-class="{'has-error' : minButik.phone.$invalid && submitted || !isPhoneValid() && submitted}">
 			  <label for="inputTelefon" class="col-lg-2  col-lg-offset-1 control-label">Telefon</label>
 			  <div class="col-lg-6">
 				<input class="form-control" name ="phone" id="inputTelefon" placeholder="+4547594758" type="text" ng-model="store.phone" required>

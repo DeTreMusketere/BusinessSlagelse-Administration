@@ -1,4 +1,4 @@
-angular.module('app').controller("MinButikController", function($scope, StoreService, SessionService){
+angular.module('app').controller("MinButikController", function($scope, StoreService, SessionService, ValidationService){
 
 	$scope.submitted = false;
 	$scope.load = function(){		
@@ -13,10 +13,15 @@ angular.module('app').controller("MinButikController", function($scope, StoreSer
 
 	$scope.save = function(){
 		if($scope.minButik.$valid){
-			StoreService.save($scope.store, function(response){
-				$.simplyToast('Dine ændringer er gemt', 'success');
-				console.log(response);
-			});
+			if($scope.isPhoneValid()){
+				$scope.store.phone = ValidationService.phoneValidation($scope.store.phone);
+				StoreService.save($scope.store, function(response){
+					$.simplyToast('Dine ændringer er gemt', 'success');					
+				});
+			} else {
+				$.simplyToast('Telefonnummeret er ugyldigt', 'danger');
+				$scope.submitted = true;
+			}
 		} else {
 			$.simplyToast('Alle felter skal udfyldes', 'danger');
 			$scope.submitted = true;
@@ -34,5 +39,15 @@ angular.module('app').controller("MinButikController", function($scope, StoreSer
 			}
 		}
 	};
+
+	$scope.isPhoneValid = function(){
+		if($scope.store === undefined){
+			return false;
+		}
+		if(ValidationService.phoneValidation($scope.store.phone) == null){			
+			return false;
+		}		
+		return true;
+	}
 
 });

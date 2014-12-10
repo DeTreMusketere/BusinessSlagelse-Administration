@@ -11,7 +11,6 @@ angular.module('app').service('StoreService', function(SQLService) {
 		$whereData = [store.id_store];
 
 		SQLService.update($table, $columns, $values, $whereColumn, $whereData).success(function(response) {
-			console.log($table, $columns, $values, $whereColumn, $whereData);
 			callback(response[0])
 		});
 	};
