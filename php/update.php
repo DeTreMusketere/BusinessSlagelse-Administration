@@ -8,7 +8,7 @@
 	$table = $request->table;
 	$columns = $request->columns;
 	$values = $request->values;
-	$whereColumn = $request->whereColumn;
+	$whereColumns = $request->whereColumns;
 	$whereData = $request->whereData;
 
 	$sql = "UPDATE " . $table . " SET ";

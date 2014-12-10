@@ -1,31 +1,31 @@
 <div id="MinButikMaster" class="container panel panel-default" style="text-align: center">
 	<br/>
 	<div class="panel-body">
-		<form class="form-horizontal" name="minButik" ng-submit="save()">
+		<form class="form-horizontal" name="minButik" ng-submit="save()" novalidate>
 		  <fieldset>
 			<legend>Min Butik</legend>
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error' : minButik.name.$invalid && submitted}">
 			  <label for="inputButikNavn" class="col-lg-2  col-lg-offset-1 control-label">Navn</label>
 			  <div class="col-lg-6">
-				<input class="form-control" id="inputButikNavn" placeholder="Netto" ng-model="store.name" type="text">
+				<input class="form-control" name="name" id="inputButikNavn" placeholder="Netto" ng-model="store.name" type="text" required>
 			  </div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error' : minButik.description.$invalid && submitted}">
 			  <label for="inputBeskrivelse" class="col-lg-2  col-lg-offset-1 control-label">Beskrivelse</label>
 			  <div class="col-lg-6">
-				<textarea class="form-control" rows="3" id="inputBeskrivelse" ng-model="store.description"></textarea>
+				<textarea class="form-control" name="description" rows="3" id="inputBeskrivelse" ng-model="store.description" required></textarea>
 			  </div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error' : minButik.address.$invalid && submitted}">
 			  <label for="inputAdresse" class="col-lg-2  col-lg-offset-1 control-label">Adresse</label>
 			  <div class="col-lg-6">
-				<input class="form-control" id="inputAdresse" placeholder="Nallergade 16 7590 Lorteland" type="text" ng-model="store.address">
+				<input class="form-control" name="address" id="inputAdresse" placeholder="Nallergade 16 7590 Lorteland" type="text" ng-model="store.address" required>
 			  </div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error' : minButik.phone.$invalid && submitted}">
 			  <label for="inputTelefon" class="col-lg-2  col-lg-offset-1 control-label">Telefon</label>
 			  <div class="col-lg-6">
-				<input class="form-control" id="inputTelefon" placeholder="+4547594758" type="text" ng-model="store.phone">
+				<input class="form-control" name ="phone" id="inputTelefon" placeholder="+4547594758" type="text" ng-model="store.phone" required>
 			  </div>
 			</div>
 			<div class="container form-group">
@@ -45,7 +45,7 @@
 				</div>
 			</div>
 			<br/>
-			<button class="btn btn-success" id="inputUploadBillede" type="submit" ng-disabled="2 > 1">Gem</button>
+			<button class="btn btn-success" id="inputUploadBillede" type="submit" ng-disabled="!isChanged()">Gem</button>
 			<br/>
 			<br/>
 		  </fieldset>

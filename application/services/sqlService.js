@@ -12,14 +12,14 @@ angular.module('app').service('SQLService', ['$http', function($http) {
 
 		return $http.post(site + page, $data);
 	};
-	this.update = function($table, $columns, $values, $whereColumn, $whereData) {
+	this.update = function($table, $columns, $values, $whereColumns, $whereData) {
 		var page = "php/update.php";
 
 		$data = {
 			'table' : $table,
 			'columns' : $columns,
 			'values' : $values,
-			'whereColumn' : $whereColumn,
+			'whereColumns' : $whereColumns,
 			'whereData' : $whereData
 		};
 
