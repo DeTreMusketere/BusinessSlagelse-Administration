@@ -16,6 +16,7 @@ angular.module('app').controller("MinButikController", function($scope, StoreSer
 			if($scope.isPhoneValid()){
 				$scope.store.phone = ValidationService.phoneValidation($scope.store.phone);
 				StoreService.save($scope.store, function(response){
+					$scope.originalStore = angular.copy($scope.store);
 					$.simplyToast('Dine ændringer er gemt', 'success');					
 				});
 			} else {

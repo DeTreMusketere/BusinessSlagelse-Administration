@@ -9,18 +9,21 @@ angular.module('app').controller('MinProfilController', function($scope, Session
 	$scope.load();
 
 	$scope.save = function() {
-		$scope.submitted = true;
 		if($scope.profileForm.$valid && $scope.isPhoneValid()) {
 			UserService.save($scope.user, 
 				function() {
+					$scope.originalUser = angular.copy($scope.user);
 					$.simplyToast('Ændringerne blev gemt', 'success');
+					$scope.submitted = false;
 				},
 				function() {
 					$.simplyToast('Ændringerne blev ikke gemt', 'danger');
+					$scope.submitted = true;
 				})
 			
 		} else {
 			$.simplyToast('The form is not valid', 'danger');
+			$scope.submitted = true;
 		}
 	}
 
