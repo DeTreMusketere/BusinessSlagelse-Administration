@@ -11,25 +11,7 @@ angular.module('app').service("SaleService", function(SQLService, SessionService
 		$values = [sale.id_sale, "'" + sale.name + "'", sale.price, "'" + sale.description + "'", sale.start, sale.end,  sale.publish, sale_store_id];
 		SQLService.insert($table, $columns, $values).success(function(response) {
 			if(response == true) {
-				//Add tags to sale
-				for($tagCounter = 0; $tagCounter < tagArray.length; $tagCounter + 1) {
-					$temp_tag_id_variable = tagArray[$tagCounter].tag_id; //Get seperate variable for tag id
-					$second_table = "sale_tag"; // Make table
-					$second_columns = ["id_sale", "tag_id"]; // Columns
-					$second_values = [sale.id_sale,  $temp_tag_id_variable]; //Values
-					//Add tag
-					SQLService.insert($second_table, $second_columns, $second_values).success(function(second_response) {
-						if(second_response != true) {
-							$failed_loop = true; //Ensure fail if the loop fails
-						}
-					});
-				}
-				//,Only success state
-				if(!failed_loop) {
-					success();
-				} else {
-					fail(); // Loop fail
-				}
+				success();
 			} else {
 				fail(); // Main fail
 			};
@@ -37,8 +19,17 @@ angular.module('app').service("SaleService", function(SQLService, SessionService
 		});
 	};
 
-	this.save = function() {
+	this.save = function(sale, callback) {
+		$table = "sale";
+		$columns = ["id_sale", "name", "price", "description", "start", "end", "publish", "store_id"];
+		$values = [sale.id_sale, "'" + sale.name + "'", sale.price, "'" + sale.description + "'", sale.start, sale.end,  sale.publish, sale.store_id];
+		$whereColumn = ["id_sale"];
+		$whereData = [sale.id_sale];
 
+		SQLService.update($table, $columns, $values, $whereColumn, $whereData).success(function(response) {
+			callback(response[0]);
+			console.log(response[0]);	
+		});
 	};
 
 	this.delete = function(sale, success, fail) {
@@ -55,8 +46,11 @@ angular.module('app').service("SaleService", function(SQLService, SessionService
 			});
 	};
 
-	this.get = function() {
-
+	this.get = function(id_sale, callback) {
+		SQLService.select("sale", ["id_sale", "name", "price", "description", "start", "end", "publish", "store_id"], ["id_sale"], [id_sale]).success(function(response) {
+			callback(response[0]);
+			console.log(response[0]);			
+		});
 	};
 
 	this.getAll = function(callback) {

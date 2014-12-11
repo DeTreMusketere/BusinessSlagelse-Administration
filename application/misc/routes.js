@@ -23,6 +23,14 @@ window.routes =
         requireAdmin: false,
         requireNotAdmin: true
     },
+    "tilbud_rediger": {
+        url: '/tilbud_rediger',
+        templateUrl: 'pages/redigertilbud.html', 
+        controller: 'RedigerTilbudController',
+        requireLogin: true,
+        requireAdmin: false,
+        requireNotAdmin: true
+    },
     "butikker_oversigt": {
         url: '/butikker_oversigt',
         templateUrl: 'pages/butikoversigt.html', 
