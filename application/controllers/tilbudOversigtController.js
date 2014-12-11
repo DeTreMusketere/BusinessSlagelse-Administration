@@ -1,4 +1,5 @@
 angular.module('app').controller('TilbudOversigtController', function($scope, SaleService) {
+
 	var l = Ladda.create( document.getElementById('buttonDelete') );
 
 	$scope.sales = [];

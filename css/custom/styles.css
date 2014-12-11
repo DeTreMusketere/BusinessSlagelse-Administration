@@ -2,3 +2,7 @@ body {
   padding-top: 70px; padding-bottom: 70px; padding-left: 20px; padding-right: 20px;
   background-color: #ecf0f1;
 }
+
+.modal-backdrop {
+  z-index: -1;
+}
