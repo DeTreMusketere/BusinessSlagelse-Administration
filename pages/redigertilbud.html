@@ -1,25 +1,25 @@
 <div id="OpretTilbudMaster" class="container panel panel-default" style="text-align: center">
 	<br/>
 	<div class="panel-body">
-		<form class="form-horizontal">
+		<form class="form-horizontal" name="redigerTilbud" novalidate>
 			<fieldset>
 				<legend>Rediger Tilbud</legend>
 				<div class="form-group">
 					<label for="inputTitel" class="col-lg-2  col-lg-offset-1 control-label">Titel</label>
 					<div class="col-lg-6">
-						<input class="form-control" id="inputTitel" placeholder="Chokolade" type="text">
+						<input class="form-control" id="inputTitel" placeholder="Chokolade" name="saleName" ng-model="sale.name" type="text" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="inputBeskrivelse" class="col-lg-2  col-lg-offset-1 control-label">Beskrivelse</label>
 					<div class="col-lg-6">
-						<textarea class="form-control" rows="3" id="inputBeskrivelse"></textarea>
+						<textarea class="form-control" rows="3" id="inputBeskrivelse" name="saleDescription" ng-model="sale.description" required></textarea>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="inputPris" class="col-lg-2  col-lg-offset-1 control-label">Pris i kr.</label>
 					<div class="col-lg-6">
-						<input class="form-control" id="inputPris" placeholder="16" type="text">
+						<input class="form-control" id="inputPris" placeholder="16" type="text" name="salePrice" ng-model="sale.price" required>
 					</div>
 				</div>
 				<div class="container form-group">
@@ -41,21 +41,21 @@
 				<div class="form-group">
 					<label for="inputStartDato" class="col-lg-2  col-lg-offset-1 control-label">Start Dato</label>
 					<div class="input-append date col-lg-6">
-						<input  class="form-control" id="inputStartDato" placeholder="Start Dato" type="text" value="12-02-2012">
+						<input  class="form-control" id="inputStartDato" placeholder="Start Dato" type="text" value="12-02-2012" name="saleStart" ng-model="sale.start" required>
 						<span class="add-on"><i class="icon-th"></i></span>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="inputSlutDato" class="col-lg-2  col-lg-offset-1 control-label">Slut Dato</label>
 					<div class="input-append date col-lg-6">
-						<input  class="form-control" id="inputSlutDato" placeholder="Slut Dato" type="text" value="12-02-2012">
+						<input  class="form-control" id="inputSlutDato" placeholder="Slut Dato" type="text" value="12-02-2012" name="saleEnd" ng-model="sale.end" required>
 						<span class="add-on"><i class="icon-th"></i></span>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="inputPublishDato" class="col-lg-2  col-lg-offset-1 control-label">Publish Dato</label>
 					<div class="input-append date col-lg-6">
-						<input  class="form-control" id="inputPublishDato" placeholder="Publish Dato" type="text" value="12-02-2012">
+						<input  class="form-control" id="inputPublishDato" placeholder="Publish Dato" type="text" value="12-02-2012" name="salePublish" ng-model="sale.publish" required>
 						<span class="add-on"><i class="icon-th"></i></span>
 					</div>
 				</div>
@@ -93,7 +93,7 @@
 					</div>
 				</div>
 				<br/>
-				<button class="btn btn-success" id="inputUploadBillede" type="button">Gem</button>
+				<button class="btn btn-success" id="inputUploadBillede" type="button" ng-click="save()">Gem</button>
 			</fieldset>
 		</form>		
 	</div>
