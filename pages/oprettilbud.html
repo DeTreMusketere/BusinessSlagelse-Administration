@@ -64,7 +64,7 @@
 					<div class="col-lg-2">
 						<label>Alle tags</label>
 						<select id="AvailableTagsID" multiple="true" class="form-control">
-							<option ng-repeat="tag in availableTags">{{availableTags.name}}</option>
+							<option ng-repeat="tag in availableTags">{{tag.name}}</option>
 						</select>
 					</div>
 					<div class="col-lg-1">
@@ -80,7 +80,7 @@
 					<div class="col-lg-2">
 						<label>Tilføjede tags</label>
 						<select id="SelectedTagsID" multiple="" class="form-control">
-							<option ng-repeat="tag in selectedTags">{{selectedTags.name}}</option>
+							<option ng-repeat="tag in selectedTags">{{tag.name}}</option>
 						</select>
 					</div>
 				</div>

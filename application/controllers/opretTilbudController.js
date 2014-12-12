@@ -9,6 +9,8 @@ angular.module('app').controller('OpretTilbudController', function($scope, SaleS
 		TagService.getAll(function(response) {
 			$scope.availableTags = response;
 			$scope.availableTags.sort(); //Sorting looks nice
+			console.log($scope.availableTags.length);
+			console.log($scope.availableTags[0].name);
 		});
 	};
 
