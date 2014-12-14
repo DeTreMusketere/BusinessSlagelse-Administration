@@ -60,6 +60,11 @@ angular.module('app').controller('OpretTilbudController', function($scope, SaleS
 			$scope.createButton.stop();
 
 			$scope.createForm.saleName.$dirty = true;
+			$scope.createForm.saleDescription.$dirty = true;
+			$scope.createForm.salePrice.$dirty = true;
+			$scope.createForm.saleStart.$dirty = true;
+			$scope.createForm.saleEnd.$dirty = true;
+			$scope.createForm.salePublish.$dirty = true;
 		};
 	};
 });

@@ -4,19 +4,19 @@
 		<form class="form-horizontal" name="redigerTilbud" novalidate>
 			<fieldset>
 				<legend>Rediger Tilbud</legend>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : redigerTilbud.saleName.$invalid && redigerTilbud.saleName.$dirty}">
 					<label for="inputTitel" class="col-lg-2  col-lg-offset-1 control-label">Titel</label>
 					<div class="col-lg-6">
 						<input class="form-control" id="inputTitel" placeholder="Chokolade" name="saleName" ng-model="sale.name" type="text" required>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : redigerTilbud.saleDescription.$invalid && redigerTilbud.saleDescription.$dirty}">
 					<label for="inputBeskrivelse" class="col-lg-2  col-lg-offset-1 control-label">Beskrivelse</label>
 					<div class="col-lg-6">
 						<textarea class="form-control" rows="3" id="inputBeskrivelse" name="saleDescription" ng-model="sale.description" required></textarea>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : redigerTilbud.salePrice.$invalid && redigerTilbud.salePrice.$dirty}">
 					<label for="inputPris" class="col-lg-2  col-lg-offset-1 control-label">Pris i kr.</label>
 					<div class="col-lg-6">
 						<input class="form-control" id="inputPris" placeholder="16" type="text" name="salePrice" ng-model="sale.price" required>
@@ -38,21 +38,21 @@
 						</div>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : redigerTilbud.saleStart.$invalid && redigerTilbud.saleStart.$dirty}">
 					<label for="inputStartDato" class="col-lg-2  col-lg-offset-1 control-label">Start Dato</label>
 					<div class="input-append date col-lg-6">
 						<input  class="form-control" id="inputStartDato" placeholder="Start Dato" type="text" value="12-02-2012" name="saleStart" ng-model="sale.start" required>
 						<span class="add-on"><i class="icon-th"></i></span>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : redigerTilbud.saleEnd.$invalid && redigerTilbud.saleEnd.$dirty}">
 					<label for="inputSlutDato" class="col-lg-2  col-lg-offset-1 control-label">Slut Dato</label>
 					<div class="input-append date col-lg-6">
 						<input  class="form-control" id="inputSlutDato" placeholder="Slut Dato" type="text" value="12-02-2012" name="saleEnd" ng-model="sale.end" required>
 						<span class="add-on"><i class="icon-th"></i></span>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" ng-class="{'has-error' : redigerTilbud.salePublish.$invalid && redigerTilbud.salePublish.$dirty}">
 					<label for="inputPublishDato" class="col-lg-2  col-lg-offset-1 control-label">Publish Dato</label>
 					<div class="input-append date col-lg-6">
 						<input  class="form-control" id="inputPublishDato" placeholder="Publish Dato" type="text" value="12-02-2012" name="salePublish" ng-model="sale.publish" required>
