@@ -49,6 +49,7 @@ window.routes =
     "tags_oversigt": {
         url: '/tags_oversigt',
         templateUrl: 'pages/tagoversigt.html', 
+        controller: 'TagOversigtController', 
         requireLogin: true,
         requireAdmin: true,
         requireNotAdmin: false
