@@ -9,4 +9,5 @@ angular.module('app').controller("TagOversigtController", function($scope, TagSe
 	};
 
 	$scope.load();
+	$('#showDesc').popover();
 });

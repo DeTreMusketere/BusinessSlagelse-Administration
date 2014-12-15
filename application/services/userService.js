@@ -25,11 +25,22 @@ angular.module('app').service('UserService', function(SQLService) {
 
 	};
 
-	this.get = function() {
-
+	this.get = function(id_user, callback) {
+		SQLService.select("user", ["id_user", "name", "email", "phone", "store_id", "administrator"], ["id_user"], [id_user]).success(function(response) {
+			callback(response[0]);			
+		});
 	};
 
-	this.getAll = function() {
+	this.getFromStoreId = function(id_store, callback) {
+		SQLService.select("user", ["id_user", "name", "email", "phone", "store_id", "administrator"], ["store_id"], [id_store]).success(function(response) {
+			//callback(response[0]);
+			//console.log("Loaajra");			
+		});
+	};
 
+	this.getAll = function(callback) {
+		SQLService.selectAll("user").success(function(response) {
+			callback(response);
+		});
 	};
 });

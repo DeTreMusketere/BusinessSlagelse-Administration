@@ -34,6 +34,7 @@ window.routes =
     "butikker_oversigt": {
         url: '/butikker_oversigt',
         templateUrl: 'pages/butikoversigt.html', 
+        controller: 'ButikOversigtController', 
         requireLogin: true,
         requireAdmin: true,
         requireNotAdmin: false

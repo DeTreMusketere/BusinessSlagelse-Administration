@@ -25,7 +25,9 @@ angular.module('app').service('StoreService', function(SQLService) {
 		});
 	};
 
-	this.getAll = function() {
-
+	this.getAll = function(callback) {
+		SQLService.selectAll("store").success(function(response) {
+			callback(response);
+		});
 	};
 });
