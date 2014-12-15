@@ -1,4 +1,4 @@
-angular.module('app').controller("TagOversigtController", function($scope, TagService){
+angular.module('app').controller("TagOversigtController", function($scope, TagService, SessionService){
 	
 	$scope.tags = [];
 
@@ -10,4 +10,9 @@ angular.module('app').controller("TagOversigtController", function($scope, TagSe
 
 	$scope.load();
 	$('#showDesc').popover();
+
+
+	$scope.gotoEditTag = function(tag) {
+		SessionService.setActiveTag(tag);
+	};
 });

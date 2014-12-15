@@ -63,6 +63,14 @@ window.routes =
         requireAdmin: true,
         requireNotAdmin: false
     },
+    "tags_rediger": {
+        url: '/tags_rediger',
+        templateUrl: 'pages/redigertag.html', 
+        controller: 'RedigerTagController', 
+        requireLogin: true,
+        requireAdmin: true,
+        requireNotAdmin: false
+    },
     "minbutik": {
         url: '/minbutik',
         templateUrl: 'pages/minbutik.html', 
