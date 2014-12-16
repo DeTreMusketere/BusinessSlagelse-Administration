@@ -15,8 +15,14 @@ angular.module('app').service('StoreService', function(SQLService) {
 		});
 	};
 
-	this.delete = function() {
-
+	this.delete = function(id_store, success, fail) {
+		SQLService.remove("store", "id_store", id_store).success(function(response) {
+			if(response == true) {
+				success();
+			} else {
+				fail();
+			};
+		});
 	};
 
 	this.get = function(id_store, callback) {

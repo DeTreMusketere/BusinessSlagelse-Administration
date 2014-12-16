@@ -34,7 +34,7 @@
 									<ul class="dropdown-menu">
 										<li><a href >Nulstil adgangskode</a></li>
 									    <li><a href>Rediger</a></li>
-									    <li><a href>Slet</a></li>
+									    <li><a ng-click="setStoreToDelete(store)" data-toggle="modal" data-target="#deleteModal" href>Slet</a></li>
 								  	</ul>
 								</div>
 							</td>
@@ -44,4 +44,23 @@
 			</div>
 		</center>
 	</div>
+</div>
+
+<!-- Delete modal -->
+<div class="modal fade" id="deleteModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Er du sikker?</h4>
+      </div>
+      <div class="modal-body">
+       	<p>Er du sikker på du vil slette den valgte butik?</p>
+       	<p>Den tilhørende bruger, samt alle tilbud tilknyttet vil blive slettet fra databasen, og vil <strong>ikke</strong> kunne genskabes efter denne handling er udført!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-disabled="deleting" class="btn btn-default" data-dismiss="modal">Annuller</button>
+        <button id="buttonDelete" type="button" ng-click="delete()" data-spinner-size="32" data-style="zoom-out" class="btn btn-danger ladda-button"><span class="ladda-label">Slet</span></button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -28,7 +28,33 @@ angular.module('app').service("SaleService", function(SQLService, SessionService
 
 		SQLService.update($table, $columns, $values, $whereColumn, $whereData).success(function(response) {
 			callback(response[0]);
-			console.log(response[0]);	
+			console.log(response[0]);
+		});
+	};
+
+	this.deleteTagConnections = function(sale, success, fail) {
+		$table = "sale_tag"
+		$idColumn = "sale_id";
+		$id = sale.id_sale;
+		SQLService.remove($table, $idColumn, $id).success(function(response) {
+			if(response == true) {
+				success();
+			} else {
+				fail();
+			};
+		});
+	};
+
+	this.deleteByStore = function(store, success, fail) {
+		$table = "sale";
+		$idColumn = "store_id";
+		$id = store.id_store;
+		SQLService.remove($table, $idColumn, $id).success(function(response) {
+			if(response == true) {
+				success();
+			} else {
+				fail();
+			}
 		});
 	};
 
@@ -37,19 +63,28 @@ angular.module('app').service("SaleService", function(SQLService, SessionService
 		$idColumn = "id_sale";
 		$id = sale.id_sale;
 		SQLService.remove($table, $idColumn, $id).
-			success(function(response) {
-				if(response == true) {
-					success();
-				} else {
-					fail();
-				};
-			});
+		success(function(response) {
+			if(response == true) {
+				success();
+			} else {
+				fail();
+			};
+		});
+	};
+
+	this.getByStore = function(store, callback) {
+		$table = "sale";
+		$columns = ["id_sale", "name", "price", "description", "start", "end", "publish", "store_id"];
+		$whereColumns = ["store_id"];
+		$whereData = [store.id_store];
+		SQLService.select($table, $columns, $whereColumns, $whereData).success(function(response) {
+			callback(response);
+		});
 	};
 
 	this.get = function(id_sale, callback) {
 		SQLService.select("sale", ["id_sale", "name", "price", "description", "start", "end", "publish", "store_id"], ["id_sale"], [id_sale]).success(function(response) {
-			callback(response[0]);
-			console.log(response[0]);			
+			callback(response[0]);			
 		});
 	};
 

@@ -21,8 +21,14 @@ angular.module('app').service('UserService', function(SQLService) {
 			});
 	};
 
-	this.delete = function() {
-
+	this.delete = function(id_user, success, fail) {
+		SQLService.remove(table, "id_user", id_user).success(function(response) {
+			if(response == true) {
+				success();
+			} else {
+				fail();
+			};
+		});
 	};
 
 	this.get = function(id_user, callback) {
