@@ -33,8 +33,26 @@ angular.module('app').service("TagService", function(SQLService, IdService) {
 			});
 	};
 
-	this.delete = function() {
-
+	this.delete = function(tag, success, fail) {
+		$table = "tag";
+		$table_two = "sale_tag";
+		$idColumn = "id_tag";
+		$id = tag.id_tag;
+		SQLService.remove($table, $idColumn, $id).
+		success(function(response) {
+			if(response == true) {
+				SQLService.remove($table_two, $idColumn, $id).
+					success(function(second_response) {
+						if(second_response == true) {
+							success();
+						} else {
+							success();
+						};
+					});
+			} else {
+				fail();
+			};
+		});
 	};
 
 	this.get = function(id_tag, callback) {
