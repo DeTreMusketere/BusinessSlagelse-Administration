@@ -1,11 +1,9 @@
-angular.module('app').controller("RedigerTagController", function($scope, $state, TagService, SessionService){
+angular.module('app').controller("RedigerTagController", function($scope, $state, TagService){
 
 	$scope.load = function(){		
-		TagService.get(SessionService.getActiveTag().id_tag, function(response){
+		TagService.get(TagService.getActiveTag().id_tag, function(response){
 			$scope.tag = response;
 			$scope.originalTag = angular.copy(response);
-			document.getElementById('inputName').value = $scope.tag.name;
-			document.getElementById('inputBeskrivelse').value = $scope.tag.description;
 		});
 	};
 

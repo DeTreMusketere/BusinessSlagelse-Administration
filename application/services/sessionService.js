@@ -1,7 +1,5 @@
 angular.module('app').service('SessionService', function($cookieStore){
     var user;
-    var active_sale;
-    var active_tag;
 
     this.setUserAuthenticated = function(userToAuthenticate){
         user = userToAuthenticate;
@@ -39,21 +37,5 @@ angular.module('app').service('SessionService', function($cookieStore){
 
     this.getUser = function() {
     	return user;
-    };
-
-    this.getActiveSale = function() {
-        return active_sale;
-    };
-
-    this.setActiveSale = function(new_active_sale) {
-        active_sale = new_active_sale;
-    };
-
-    this.getActiveTag = function() {
-        return active_tag;
-    };
-
-    this.setActiveTag = function(new_active_tag) {
-        active_tag = new_active_tag;
     };
 });
