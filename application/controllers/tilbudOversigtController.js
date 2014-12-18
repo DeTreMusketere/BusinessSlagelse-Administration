@@ -1,4 +1,4 @@
-angular.module('app').controller('TilbudOversigtController', function($scope, SaleService) {
+angular.module('app').controller('TilbudOversigtController', function($scope, SaleService, $cookieStore) {
 	var l = Ladda.create( document.getElementById('buttonDelete') );
 
 	$scope.sales = [];
@@ -38,6 +38,6 @@ angular.module('app').controller('TilbudOversigtController', function($scope, Sa
 	};
 
 	$scope.gotoEditSale = function(sale) {
-		SaleService.setActiveSale(sale);
+		$cookieStore.put('active_sale_cookie', sale);
 	};
 });

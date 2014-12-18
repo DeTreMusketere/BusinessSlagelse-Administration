@@ -1,6 +1,5 @@
-angular.module('app').service("SaleService", function(SQLService, SessionService, IdService, $cookieStore) {
+angular.module('app').service("SaleService", function(SQLService, SessionService, IdService) {
 	var sales;
-    var active_sale;
 
 	this.create = function(sale, tagArray, success, fail){
 		sale.id_sale = IdService.getNextSaleId();
@@ -94,14 +93,4 @@ angular.module('app').service("SaleService", function(SQLService, SessionService
 			callback(response);
 		});
 	};
-
-    this.getActiveSale = function() {
-    	var active_sale = $cookieStore.get('active_sale_cookie');
-    	$cookieStore.remove('active_sale_cookie');
-        return active_sale;
-    };
-
-    this.setActiveSale = function(new_active_sale) {
-        $cookieStore.put('active_sale_cookie', new_active_sale);
-    };
 });

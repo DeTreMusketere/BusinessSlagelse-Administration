@@ -1,4 +1,4 @@
-angular.module('app').controller("TagOversigtController", function($scope, TagService){
+angular.module('app').controller("TagOversigtController", function($scope, TagService, $cookieStore){
 	var l = Ladda.create( document.getElementById('buttonDelete') );
 
 	$scope.tags = [];
@@ -38,9 +38,7 @@ angular.module('app').controller("TagOversigtController", function($scope, TagSe
 			});
 	};
 
-
-
 	$scope.gotoEditTag = function(tag) {
-		TagService.setActiveTag(tag);
+		$cookieStore.put('active_tag_cookie', tag);
 	};
 });

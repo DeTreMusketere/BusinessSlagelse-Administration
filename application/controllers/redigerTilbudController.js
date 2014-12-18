@@ -1,7 +1,10 @@
-angular.module('app').controller("RedigerTilbudController", function($scope, $state, SaleService){
+angular.module('app').controller("RedigerTilbudController", function($scope, $state, $cookieStore, SaleService){
+	var active_sale;
 
-	$scope.load = function(){		
-		SaleService.get(SaleService.getActiveSale().id_sale, function(response){
+	$scope.load = function(){	
+		var active_sale = $cookieStore.get('active_sale_cookie');
+    	$cookieStore.remove('active_sale_cookie');	
+		SaleService.get(active_sale.id_sale, function(response){
 			$scope.sale = response;
 			$scope.originalSale = angular.copy(response);
 		});

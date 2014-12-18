@@ -1,7 +1,10 @@
-angular.module('app').controller("RedigerTagController", function($scope, $state, TagService){
+angular.module('app').controller("RedigerTagController", function($scope, $state, $cookieStore, TagService){
+	var active_tag;
 
-	$scope.load = function(){		
-		TagService.get(TagService.getActiveTag().id_tag, function(response){
+	$scope.load = function(){	
+		var active_tag = $cookieStore.get('active_tag_cookie');
+    	$cookieStore.remove('active_tag_cookie');		
+		TagService.get(active_tag.id_tag, function(response){
 			$scope.tag = response;
 			$scope.originalTag = angular.copy(response);
 		});

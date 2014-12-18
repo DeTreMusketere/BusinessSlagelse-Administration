@@ -69,15 +69,4 @@ angular.module('app').service("TagService", function(SQLService, IdService) {
 			callback(response);
 		});
 	};
-
-
-    this.getActiveTag = function() {
-    	var active_tag = $cookieStore.get('active_tag_cookie');
-    	$cookieStore.remove('active_tag_cookie');
-        return active_tag;
-    };
-
-    this.setActiveTag = function(new_active_tag) {
-        $cookieStore.put('active_tag_cookie', new_active_tag);
-    };
 });
