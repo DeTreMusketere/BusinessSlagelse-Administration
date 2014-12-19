@@ -22,7 +22,7 @@
 						<input class="form-control" id="inputAddress" name="storeAddress" ng-model="store.address" placeholder="Nallergade 16 7590 Lorteland" type="text" required>
 					</div>
 				</div>
-				<div class="form-group" ng-class="{'has-error' : editForm.storePhone.$invalid && editForm.storePhone.$dirty}">
+				<div class="form-group" ng-class="{'has-error' : editForm.storePhone.$invalid && editForm.storePhone.$dirty || !isPhoneValid('store') && submitted}">
 					<label for="inputPhone" class="col-lg-2  col-lg-offset-1 control-label">Telefon *</label>
 					<div class="col-lg-6">
 						<input class="form-control" id="inputPhone" name="storePhone" ng-model="store.phone" placeholder="+4547594758" type="text" required>
@@ -64,7 +64,7 @@
 						<a href class="btn btn-primary" id="adgangskode">Nulstil adgangskode</a>
 					</div>
 				</div>				
-				<div class="form-group" ng-class="{'has-error' : editForm.userPhone.$invalid && editForm.userPhone.$dirty}">
+				<div class="form-group" ng-class="{'has-error' : editForm.userPhone.$invalid && editForm.userPhone.$dirty || !isPhoneValid('user') && submitted}">
 					<label for="inputTelefon" class="col-lg-2  col-lg-offset-1 control-label">Telefon *</label>
 					<div class="col-lg-6">
 						<input class="form-control" id="inputTelefon" name="userPhone" ng-model="store.user.phone" placeholder="47594758" type="text" required>

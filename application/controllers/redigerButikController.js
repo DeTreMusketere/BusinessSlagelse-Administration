@@ -50,17 +50,23 @@ angular.module('app').controller("RedigerButikController", function($scope, $roo
 		}
 	};
 
-	$scope.isPhoneValid = function(){
+	$scope.isPhoneValid = function(string){
 		if($scope.store === undefined){
 			return false;
 		}
-		if(ValidationService.phoneValidation($scope.store.phone) == null){			
-			return false;
+		if(string == "store"){
+			if(ValidationService.phoneValidation($scope.store.phone) == null){			
+				return false;
+			}
+			return true;
+		} 
+		if(string == "user"){
+			if(ValidationService.phoneValidation($scope.store.user.phone) == null){
+				return false;
+			}		
+			return true;
 		}
-		if(ValidationService.phoneValidation($scope.store.user.phone) == null){
-			return false;
-		}		
-		return true;
+		return false;
 	}
 
 });
