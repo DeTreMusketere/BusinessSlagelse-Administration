@@ -115,5 +115,13 @@ window.routes =
         requireLogin: false,
         requireAdmin: false,
         requireNotAdmin: false
+    },
+    "test": {
+        url: '/test',
+        templateUrl: 'pages/test.html',
+        controller: 'TestController',
+        requireLogin: false,
+        requireAdmin: false,
+        requireNotAdmin: false
     }
 };
