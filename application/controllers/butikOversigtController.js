@@ -1,4 +1,4 @@
-angular.module('app').controller("ButikOversigtController", function($scope, StoreService, UserService, SaleService){
+angular.module('app').controller("ButikOversigtController", function($scope, $rootScope, StoreService, UserService, SaleService){
 	
 	$scope.stores = [];
 	$scope.users = [];
@@ -78,4 +78,11 @@ angular.module('app').controller("ButikOversigtController", function($scope, Sto
 				$.simplyToast('Butikken kunne ikke slettes', 'danger');
 			});
 	};
+
+	// Edit
+
+	$scope.setStoreToEdit = function(store){
+		$rootScope.storeToEdit = store;
+	};
+
 });

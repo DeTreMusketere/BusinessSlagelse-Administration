@@ -3,7 +3,7 @@ angular.module('app').service('StoreService', function(SQLService) {
 
 	};
 
-	this.save = function(store, callback) {
+	this.save = function(store, success, fail) {
 		$table = "store";
 		$columns = ["id_store", "name", "description", "address", "phone"];
 		$values = [store.id_store, "'" + store.name + "'", "'" + store.description + "'", "'" + store.address + "'", "'" + store.phone + "'"];
@@ -11,7 +11,11 @@ angular.module('app').service('StoreService', function(SQLService) {
 		$whereData = [store.id_store];
 
 		SQLService.update($table, $columns, $values, $whereColumn, $whereData).success(function(response) {
-			callback(response[0])
+			if(response == true){
+				success();
+			} else {
+				fail();
+			}
 		});
 	};
 

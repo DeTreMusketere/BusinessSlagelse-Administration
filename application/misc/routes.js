@@ -47,6 +47,14 @@ window.routes =
         requireAdmin: true,
         requireNotAdmin: false
     },
+    "butikker_rediger": {
+        url: '/butikker_rediger',
+        templateUrl: 'pages/redigerbutik.html',
+        controller: 'RedigerButikController',
+        requireLogin: true,
+        requireAdmin: true,
+        requireNotAdmin: false
+    },
     "tags_oversigt": {
         url: '/tags_oversigt',
         templateUrl: 'pages/tagoversigt.html', 

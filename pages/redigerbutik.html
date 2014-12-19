@@ -1,78 +1,84 @@
 <div class="container panel panel-default" style="text-align: center">
 	<br/>
 	<div class="panel-body">
-		<form class="form-horizontal">
-		  <fieldset>
-			<legend>Butik</legend>
-			<div class="form-group">
-			  <label for="inputName" class="col-lg-2  col-lg-offset-1 control-label">Navn</label>
-			  <div class="col-lg-6">
-				<input class="form-control" id="inputName" placeholder="Netto" type="text">
-			  </div>
-			</div>
-			<div class="form-group">
-			  <label for="inputBeskrivelse" class="col-lg-2  col-lg-offset-1 control-label">Beskrivelse</label>
-			  <div class="col-lg-6">
-				<textarea class="form-control" rows="3" id="inputBeskrivelse"></textarea>
-			  </div>
-			</div>
-			<div class="form-group">
-			  <label for="inputAdress" class="col-lg-2  col-lg-offset-1 control-label">Adresse</label>
-			  <div class="col-lg-6">
-				<input class="form-control" id="inputAddress" placeholder="Nallergade 16 7590 Lorteland" type="text">
-			  </div>
-			</div>
-			<div class="form-group">
-			  <label for="inputPhone" class="col-lg-2  col-lg-offset-1 control-label">Telefon</label>
-			  <div class="col-lg-6">
-				<input class="form-control" id="inputPhone" placeholder="+4547594758" type="text">
-			  </div>
-			</div>
-			<div class="container form-group">
-				<label for="inputBilledgalleri" class="col-lg-2  col-lg-offset-1 control-label">Billede</label>
-				<div class="row">
-					<div class="col-md-2">
-						<br/>
-						<br/>
-						<button class="btn btn-primary btn-sm" id="inputBilledgalleri" type="button">Billedgalleri</button>
-						<br/>
-						<br/>
-						<button class="btn btn-primary btn-sm" id="inputUploadBillede" type="button">Upload</button>
-					</div>
-					<div class="col-md-3">
-						<img src="http://i.imgur.com/ICNFlVA.png" alt="Silly Peasants" style="width:304px;height:228px" class="img-thumbnail">
+		<form class="form-horizontal" name="editForm" novalidate ng-submit="save()">
+			<fieldset>
+				<legend>Butik</legend>
+				<div class="form-group" ng-class="{'has-error' : editForm.storeName.$invalid && editForm.storeName.$dirty}">
+					<label for="inputName" class="col-lg-2  col-lg-offset-1 control-label">Navn *</label>
+					<div class="col-lg-6">
+						<input class="form-control" id="inputName" name="storeName" ng-model="store.name" placeholder="Netto" type="text" required>
 					</div>
 				</div>
-			</div>
-			<br/>
-			<legend>Bruger</legend>
-			<div class="form-group">
-			  <label for="inputBrugernavn" class="col-lg-2  col-lg-offset-1 control-label">Brugernavn</label>
-			  <div class="col-lg-6">
-				<input class="form-control" id="inputBrugernavn" placeholder="Netto3216" type="text">
-			  </div>
-			</div>
-			<div class="form-group">
-			  <label for="inputAdgangskode" class="col-lg-2  col-lg-offset-1 control-label">Adgangskode</label>
-			  <div class="col-lg-1">
-				<a href class="btn btn-primary">Nulstil</a>
-			  </div>
-			</div>
-			<div class="form-group">
-			  <label for="inputTelefon" class="col-lg-2  col-lg-offset-1 control-label">Telefon</label>
-			  <div class="col-lg-6">
-				<input class="form-control" id="inputTelefon" placeholder="+4547594758" type="text">
-			  </div>
-			</div>
-			<div class="form-group">
-			  <label for="inputEmail" class="col-lg-2  col-lg-offset-1 control-label">E-mail</label>
-			  <div class="col-lg-6">
-				<input class="form-control" id="inputEmail" placeholder="mail@mail.dk" type="text">
-			  </div>
-			</div>
-			<br/>
-			<button class="btn btn-success" id="inputUploadBillede" type="button">Gem</button>
-		  </fieldset>
+				<div class="form-group" ng-class="{'has-error' : editForm.storeDescription.$invalid && editForm.storeDescription.$dirty}">
+					<label for="inputBeskrivelse" class="col-lg-2  col-lg-offset-1 control-label">Beskrivelse *</label>
+					<div class="col-lg-6">
+						<textarea class="form-control" rows="3" id="inputBeskrivelse" name="storeDescription" ng-model="store.description" required></textarea>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{'has-error' : editForm.storeAddress.$invalid && editForm.storeAddress.$dirty}">
+					<label for="inputAddress" class="col-lg-2  col-lg-offset-1 control-label">Adresse *</label>
+					<div class="col-lg-6">
+						<input class="form-control" id="inputAddress" name="storeAddress" ng-model="store.address" placeholder="Nallergade 16 7590 Lorteland" type="text" required>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{'has-error' : editForm.storePhone.$invalid && editForm.storePhone.$dirty}">
+					<label for="inputPhone" class="col-lg-2  col-lg-offset-1 control-label">Telefon *</label>
+					<div class="col-lg-6">
+						<input class="form-control" id="inputPhone" name="storePhone" ng-model="store.phone" placeholder="+4547594758" type="text" required>
+					</div>
+				</div>
+				<div class="container form-group">
+					<label for="inputBilledgalleri" class="col-lg-2  col-lg-offset-1 control-label">Billede</label>
+					<div class="row">
+						<div class="col-md-2">
+							<br/>
+							<br/>
+							<button class="btn btn-primary btn-sm" id="inputBilledgalleri" type="button">Billedgalleri</button>
+							<br/>
+							<br/>
+							<button class="btn btn-primary btn-sm" id="inputUploadBillede" type="button">Upload</button>
+						</div>
+						<div class="col-md-3">
+							<img src="http://i.imgur.com/ICNFlVA.png" alt="Silly Peasants" style="width:304px;height:228px" class="img-thumbnail">
+						</div>
+					</div>
+				</div>
+				<br/>
+				<legend>Bruger</legend>
+				<div class="form-group" ng-class="{'has-error' : editForm.userName.$invalid && editForm.userName.$dirty}">
+					<label for="inputName" class="col-lg-2  col-lg-offset-1 control-label">Navn *</label>
+					<div class="col-lg-6">
+						<input class="form-control" id="inputName" name="userName" ng-model="store.user.name" placeholder="Netto" type="text" required>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{'has-error' : editForm.userUsername.$invalid && editForm.userUsername.$dirty}">
+					<label for="inputBrugernavn" class="col-lg-2  col-lg-offset-1 control-label">Brugernavn *</label>
+					<div class="col-lg-6">
+						<input class="form-control" id="inputBrugernavn" name="userUsername" ng-model="store.user.username" placeholder="Netto3216" type="text" required>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{'has-error' : editForm.userPassword.$invalid && editForm.userPassword.$dirty}">
+					<label for="adgangskode" class="col-lg-2  col-lg-offset-1 control-label">Adgangskode *</label>
+					<div class="col-lg-6">
+						<a href class="btn btn-primary" id="adgangskode">Nulstil adgangskode</a>
+					</div>
+				</div>				
+				<div class="form-group" ng-class="{'has-error' : editForm.userPhone.$invalid && editForm.userPhone.$dirty}">
+					<label for="inputTelefon" class="col-lg-2  col-lg-offset-1 control-label">Telefon *</label>
+					<div class="col-lg-6">
+						<input class="form-control" id="inputTelefon" name="userPhone" ng-model="store.user.phone" placeholder="47594758" type="text" required>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{'has-error' : editForm.userEmail.$invalid && editForm.userEmail.$dirty}">
+					<label for="inputEmail" class="col-lg-2  col-lg-offset-1 control-label">E-mail *</label>
+					<div class="col-lg-6">
+						<input class="form-control" id="inputEmail" name="userEmail" ng-model="store.user.email" placeholder="mail@mail.dk" type="email" required>
+					</div>
+				</div>
+				<br/>
+				<button class="btn btn-success ladda-button" data-style="expand-right" id="buttonSave" type="submit" ng-disabled="!isChanged()"><span class="ladda-label">Gem</span></button>
+			</fieldset>
 		</form>		
 	</div>
 </div>
