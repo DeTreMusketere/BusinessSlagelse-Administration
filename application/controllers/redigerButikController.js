@@ -14,26 +14,32 @@ angular.module('app').controller("RedigerButikController", function($scope, $roo
 	
 
 	$scope.save = function(){
+		l.start();
 		if($scope.editForm.$valid){	
 			if($scope.isPhoneValid()){	
 				StoreService.save($scope.store, function(){
 					UserService.save($scope.store.user, function(){
 						$.simplyToast('Dine ændringer er gemt', 'success');
 						$state.go('butikker_oversigt');
+						l.stop();
 					}, function(){
 						$.simplyToast('Der skete en fejl da brugeren skulle gemmes', 'danger');	
+						l.stop();
 					});
 				}, function(){
-					$.simplyToast('Der skete en fejl da butikken skulle gemmes', 'danger');	
+					$.simplyToast('Der skete en fejl da butikken skulle gemmes', 'danger');
+					l.stop();
 				});		
 
 			} else {
 				$.simplyToast('Telefonnummeret er ugyldigt', 'danger');
 				$scope.submitted = true;
+				l.stop();
 			}
 		} else {
 			$.simplyToast('Alle felter skal udfyldes', 'danger');
 			$scope.submitted = true;
+			l.stop();
 		}
 	};
 

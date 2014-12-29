@@ -1,4 +1,5 @@
 angular.module('app').controller('MinProfilController', function($scope, SessionService, UserService, ValidationService) {
+	var l = Ladda.create( document.getElementById('saveButton') );
 	
 	$scope.submitted = false;
 	$scope.load = function() {
@@ -9,21 +10,25 @@ angular.module('app').controller('MinProfilController', function($scope, Session
 	$scope.load();
 
 	$scope.save = function() {
+		l.start();
 		if($scope.profileForm.$valid && $scope.isPhoneValid()) {
 			UserService.save($scope.user, 
 				function() {
 					$scope.originalUser = angular.copy($scope.user);
 					$.simplyToast('Ændringerne blev gemt', 'success');
 					$scope.submitted = false;
+					l.stop();
 				},
 				function() {
 					$.simplyToast('Ændringerne blev ikke gemt', 'danger');
 					$scope.submitted = true;
+					l.stop();
 				})
 			
 		} else {
 			$.simplyToast('The form is not valid', 'danger');
 			$scope.submitted = true;
+			l.stop();
 		}
 	}
 

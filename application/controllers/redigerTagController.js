@@ -1,4 +1,5 @@
 angular.module('app').controller("RedigerTagController", function($scope, $state, $cookieStore, TagService){
+	var l = Ladda.create( document.getElementById('saveButton') );
 	var active_tag;
 
 	$scope.load = function(){	
@@ -13,15 +14,17 @@ angular.module('app').controller("RedigerTagController", function($scope, $state
 	$scope.load();
 
 	$scope.save = function(){
+		l.start();
 		$titelCheck = document.getElementById('inputName').value;
 		$descriptionCheck = document.getElementById('inputBeskrivelse').value;
 		if($scope.tag && $titelCheck != "" && $descriptionCheck != "") {
 			TagService.save($scope.tag, function(response){
 				$.simplyToast('Dine ændringer er gemt', 'success');	
-				$state.go('tags_oversigt');				
+				$state.go('tags_oversigt');
 			});
 		} else {
 			$.simplyToast('Nogle felter blev ikke udfyldt', 'danger');
+			l.stop();
 		};
 	}
 

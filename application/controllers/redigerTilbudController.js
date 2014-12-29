@@ -1,4 +1,5 @@
 angular.module('app').controller("RedigerTilbudController", function($scope, $state, $cookieStore, SaleService){
+	$scope.saveButton = Ladda.create( document.getElementById('saveButton') );
 	var active_sale;
 
 	$scope.load = function(){	
@@ -13,6 +14,7 @@ angular.module('app').controller("RedigerTilbudController", function($scope, $st
 	$scope.load();
 
 	$scope.save = function(){
+		$scope.saveButton.start();
 		$titelCheck = document.getElementById('inputTitel').value;
 		$descriptionCheck = document.getElementById('inputBeskrivelse').value;
 		$priceCheck = document.getElementById('inputPris').value;
@@ -21,10 +23,11 @@ angular.module('app').controller("RedigerTilbudController", function($scope, $st
 		$publishCheck = document.getElementById('inputPublishDato').value;
 		if($scope.sale && $publishCheck != "" && $titelCheck != "" && $descriptionCheck != "" && $priceCheck != "" && $startCheck != "" && $endCheck != "") {
 			SaleService.save($scope.sale, function(response){
-				$.simplyToast('Dine ændringer er gemt', 'success');	
-				$state.go('tilbud_oversigt');				
+				$.simplyToast('Dine ændringer er gemt', 'success');
+				$state.go('tilbud_oversigt');
 			});
 		} else {
+			$scope.saveButton.stop();
 			$.simplyToast('Nogle felter blev ikke udfyldt', 'danger');
 		};
 	}

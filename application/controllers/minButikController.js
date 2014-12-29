@@ -1,4 +1,5 @@
 angular.module('app').controller("MinButikController", function($scope, StoreService, SessionService, ValidationService){
+	var l = Ladda.create( document.getElementById('saveButton') );
 
 	$scope.submitted = false;
 	$scope.load = function(){		
@@ -12,20 +13,24 @@ angular.module('app').controller("MinButikController", function($scope, StoreSer
 	$scope.load();
 
 	$scope.save = function(){
+		l.start();
 		if($scope.minButik.$valid){
 			if($scope.isPhoneValid()){
 				$scope.store.phone = ValidationService.phoneValidation($scope.store.phone);
 				StoreService.save($scope.store, function(response){
 					$scope.originalStore = angular.copy($scope.store);
-					$.simplyToast('Dine ændringer er gemt', 'success');					
+					$.simplyToast('Dine ændringer er gemt', 'success');		
+					l.stop();			
 				});
 			} else {
 				$.simplyToast('Telefonnummeret er ugyldigt', 'danger');
 				$scope.submitted = true;
+				l.stop();
 			}
 		} else {
 			$.simplyToast('Alle felter skal udfyldes', 'danger');
 			$scope.submitted = true;
+			l.stop();
 		}
 	}
 

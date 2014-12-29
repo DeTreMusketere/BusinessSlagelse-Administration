@@ -1,4 +1,5 @@
 angular.module('app').controller("ButikOversigtController", function($scope, $rootScope, StoreService, UserService, SaleService){
+	var l = Ladda.create( document.getElementById('buttonDelete') );
 	
 	$scope.stores = [];
 	$scope.users = [];
@@ -39,6 +40,7 @@ angular.module('app').controller("ButikOversigtController", function($scope, $ro
 	};
 
 	$scope.delete = function() {
+		l.start();
 		$scope.sales.forEach(function(sale) {
 			SaleService.deleteTagConnections(sale,
 				function() {
@@ -64,14 +66,17 @@ angular.module('app').controller("ButikOversigtController", function($scope, $ro
 						$.simplyToast('Butikken blev slettet', 'success');
 						$scope.load();
 						$('#deleteModal').modal('hide');
+						l.stop();
 					},
 					function() {
 						$.simplyToast('Butikken kunne ikke slettes', 'danger');
 						$('#deleteModal').modal('hide');
+						l.stop();
 					});
 			},
 			function() {
 				$.simplyToast('Butikken kunne ikke slettes', 'danger');
+				l.stop();
 			});
 	};
 
