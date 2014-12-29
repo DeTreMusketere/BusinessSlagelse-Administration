@@ -10,7 +10,6 @@ angular.module('app').service('IdService', function() {
 				currentUserId = user.id_user;
 			};
 		});
-		console.log("CurrentUserId: " + currentUserId);
 	};
 
 	this.loadStores = function(stores) {
@@ -19,7 +18,6 @@ angular.module('app').service('IdService', function() {
 				currentStoreId = store.id_store;
 			};
 		});
-		console.log("CurrentStoreId: " + currentStoreId);
 	};
 
 	this.loadSales = function(sales) {
@@ -28,7 +26,6 @@ angular.module('app').service('IdService', function() {
 				currentSaleId = sale.id_sale;
 			};
 		});
-		console.log("CurrentSaleId: " + currentSaleId);
 	};
 
 	this.loadTags = function(tags) {
@@ -37,7 +34,6 @@ angular.module('app').service('IdService', function() {
 				currentTagId = tag.id_tag;
 			};
 		});
-		console.log("CurrentTagId: " + currentTagId);
 	};
 
 	this.getCurrentUserId = function() {

@@ -42,39 +42,35 @@ angular.module('app').controller("ButikOversigtController", function($scope, $ro
 		$scope.sales.forEach(function(sale) {
 			SaleService.deleteTagConnections(sale,
 				function() {
-					console.log("Sale connections deleted, deleting sale now...");
 					SaleService.delete(sale,
 						function() {
-							console.log(" Sale deleted :D");
+							
 						},
 						function() {
-							console.error(" Could not delete sale :(");
+							
 						});
 				},
 				function(){
-					console.error("Could not delete tag connections (Sale was not deleted either)");
+					
 				});
 		});
 
 
 		StoreService.delete($scope.store.id_store,
 			function() {
-				console.log("Store was deleted, deleting user now...");
+				
 				UserService.delete($scope.user.id_user,
 					function() {
 						$.simplyToast('Butikken blev slettet', 'success');
 						$scope.load();
 						$('#deleteModal').modal('hide');
-						console.log(" User was deleted :D");
 					},
 					function() {
 						$.simplyToast('Butikken kunne ikke slettes', 'danger');
 						$('#deleteModal').modal('hide');
-						console.error(" User could not be deleted :(");
 					});
 			},
 			function() {
-				console.error("Could not delete store");
 				$.simplyToast('Butikken kunne ikke slettes', 'danger');
 			});
 	};

@@ -15,7 +15,6 @@ angular.module('app').service("SaleService", function(SQLService, SessionService
 			} else {
 				fail(); // Main fail
 			};
-			console.log(response);
 		});
 	};
 
@@ -28,7 +27,6 @@ angular.module('app').service("SaleService", function(SQLService, SessionService
 
 		SQLService.update($table, $columns, $values, $whereColumn, $whereData).success(function(response) {
 			callback(response[0]);
-			console.log(response[0]);
 		});
 	};
 

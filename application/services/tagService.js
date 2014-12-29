@@ -59,8 +59,7 @@ angular.module('app').service("TagService", function(SQLService, IdService) {
 
 	this.get = function(id_tag, callback) {
 		SQLService.select("tag", ["id_tag", "name", "description"], ["id_tag"], [id_tag]).success(function(response) {
-			callback(response[0]);
-			console.log(response[0]);			
+			callback(response[0]);			
 		});
 	};
 

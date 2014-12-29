@@ -7,5 +7,5 @@ $.extend(true, $.simplyToast.defaultOptions,
 	},
 	align: "center",
 	allowDismiss: true,
-	delay: 7000
+	delay: 1500
 });
