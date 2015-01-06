@@ -23,7 +23,7 @@ angular.module('app').service("ValidationService", function(){
 			if(numbersCheck.test(string)){
 				return null;
 			} else {
-				if(string.substr(0, 4) == 0045){
+				if(string.substr(0, 4) == "0045"){
 					return "+45" + string.substr(4);
 				}
 			}

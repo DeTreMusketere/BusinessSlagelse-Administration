@@ -16,7 +16,9 @@ angular.module('app').controller("RedigerButikController", function($scope, $roo
 	$scope.save = function(){
 		l.start();
 		if($scope.editForm.$valid){	
-			if($scope.isPhoneValid()){	
+			if($scope.isPhoneValid('store') && $scope.isPhoneValid('user')){
+				$scope.store.phone = ValidationService.phoneValidation($scope.store.phone);	
+				$scope.store.user.phone = ValidationService.phoneValidation($scope.store.user.phone);
 				StoreService.save($scope.store, function(){
 					UserService.save($scope.store.user, function(){
 						$.simplyToast('Dine ændringer er gemt', 'success');
@@ -57,21 +59,21 @@ angular.module('app').controller("RedigerButikController", function($scope, $roo
 	};
 
 	$scope.isPhoneValid = function(string){
-		if($scope.store === undefined){
+		if($scope.store === undefined){			
 			return false;
 		}
-		if(string == "store"){
+		if(string === "store"){
 			if(ValidationService.phoneValidation($scope.store.phone) == null){			
 				return false;
 			}
 			return true;
 		} 
-		if(string == "user"){
+		if(string === "user"){
 			if(ValidationService.phoneValidation($scope.store.user.phone) == null){
 				return false;
 			}		
 			return true;
-		}
+		}		
 		return false;
 	}
 

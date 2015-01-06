@@ -11,22 +11,28 @@ angular.module('app').controller('MinProfilController', function($scope, Session
 
 	$scope.save = function() {
 		l.start();
-		if($scope.profileForm.$valid && $scope.isPhoneValid()) {
-			UserService.save($scope.user, 
-				function() {
-					$scope.originalUser = angular.copy($scope.user);
-					$.simplyToast('Ændringerne blev gemt', 'success');
-					$scope.submitted = false;
-					l.stop();
-				},
-				function() {
-					$.simplyToast('Ændringerne blev ikke gemt', 'danger');
-					$scope.submitted = true;
-					l.stop();
-				})
-			
+		if($scope.profileForm.$valid) {
+			if($scope.isPhoneValid()){
+				$scope.user.phone = ValidationService.phoneValidation($scope.user.phone);
+				UserService.save($scope.user, 
+					function() {
+						$scope.originalUser = angular.copy($scope.user);
+						$.simplyToast('Ændringerne blev gemt', 'success');
+						$scope.submitted = false;
+						l.stop();
+					},
+					function() {
+						$.simplyToast('Ændringerne blev ikke gemt', 'danger');
+						$scope.submitted = true;
+						l.stop();
+					})
+			} else {
+				$.simplyToast('Telefonnummeret er ugyldigt', 'danger');
+				$scope.submitted = true;
+				l.stop();
+			}
 		} else {
-			$.simplyToast('The form is not valid', 'danger');
+			$.simplyToast('Alle felter skal udfyldes', 'danger');
 			$scope.submitted = true;
 			l.stop();
 		}
